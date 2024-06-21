@@ -1,5 +1,5 @@
 # frontend
-Sveltekit front-end of murof.net
+SvelteKit front-end of murof.net
 
 ## Context
 
