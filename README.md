@@ -5,6 +5,12 @@ Sveltekit front-end of murof.net
 
 ## Quickstart
 
+Start development server
+
+```bash
+npm run dev -- --open
+```
+
 ## Roadmap
 - [ ] Hero page
 - [ ] login page
