@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
  
+@font-face {
+  font-family: "Roboto";
+  src: url('../static/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url('../static/fonts/Roboto_Mono/static/RobotoMono-Regular.ttf') format('truetype');
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
