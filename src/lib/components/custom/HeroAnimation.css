@@ -1,0 +1,34 @@
+/* STARTING STATE */
+/* edges are covered */
+#edge_t1, #edge_t2r, #edge_t2l, #edge_t3, #edge_b1, #edge_b2, #edge_b3t, #edge_b3b, #edge_b4 {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+}
+
+/* ANIMATIONS */
+/* nodes are expanded into existence */
+@keyframes expand_t1 {0% {r: 0;} 100% {r: 38;}}
+#node_t1 {animation: expand_t1 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.4s both;}
+@keyframes expand_b1 {0% {r: 0;} 100% {r: 38;}}
+#node_b1 {animation: expand_b1 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.4s both;}
+
+@keyframes expand_t2r {0% {r: 0;} 100% {r: 36;}}
+#node_t2r {animation: expand_t2r 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2.3s both;}
+@keyframes expand_t2l {0% {r: 0;} 100% {r: 48;}}
+#node_t2l {animation: expand_t2l 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2.3s both;}
+@keyframes expand_b2 {0% {r: 0;} 100% {r: 32;}}
+#node_b2 {animation: expand_b2 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2.3s both;}
+
+@keyframes expand_t3 {0% {r: 0;} 100% {r: 26;}}
+#node_t3 {animation: expand_t3 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) 3s both;}
+@keyframes expand_b3 {0% {r: 0;} 100% {r: 24;}}
+#node_b3 {animation: expand_b3 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) 3s both;}
+@keyframes expand_b34 {0% {r: 0;} 100% {r: 24;}}
+#node_b34 {animation: expand_b34 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) 3.2s both;}
+
+/* edges are drawn */
+@keyframes draw_edge {0% {stroke-dashoffset: 1000;} 100% {stroke-dashoffset: 0;}}
+#edge_t1, #edge_b1 {animation: draw_edge 4s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1s both;}
+#edge_t2r, #edge_t2l, #edge_b2 {animation: draw_edge 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2s both;}
+#edge_t3, #edge_b3t, #edge_b3b {animation: draw_edge 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2.7s both;}
+#edge_b4 {animation: draw_edge 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 3.2s both;}
