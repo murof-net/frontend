@@ -6,4 +6,5 @@
 <ModeWatcher />
 <slot />
 
-<style></style>
+<style>
+</style>
