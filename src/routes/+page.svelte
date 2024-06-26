@@ -1,8 +1,10 @@
 <script lang="ts">
   import HeroSection from "$lib/components/custom/HeroSection.svelte";
+
   import { Button } from "$lib/components/ui/button";
   import * as Card from "$lib/components/ui/card";
   import * as Menubar from "$lib/components/ui/menubar";
+
   import { toggleMode } from "mode-watcher";
   import Sun from "lucide-svelte/icons/sun";
   import Moon from "lucide-svelte/icons/moon";
@@ -15,10 +17,10 @@
     <div class="container flex max-w-9xl items-center p-1">
       <Menubar.Menu>
 
-        <Menubar.Item class="hidden text-foreground/70 transition-colors hover:text-foreground/85 lg:block">
+        <Menubar.Item class="hidden text-foreground/70 transition-colors hover:text-foreground/85 lg:block pr-8">
           <a href="#features">Features</a>
         </Menubar.Item>
-        <Menubar.Item class="hidden text-foreground/70 transition-colors hover:text-foreground/85 lg:block">
+        <Menubar.Item class="hidden text-foreground/70 transition-colors hover:text-foreground/85 lg:block pr-8">
           <a href="#pricing">Pricing</a>
         </Menubar.Item>
 
@@ -39,7 +41,7 @@
           <Menubar.Item><a href="/test">Learn more</a></Menubar.Item>
           <Menubar.Separator />
           <Menubar.Item><a href="/auth/signup">Sign up</a></Menubar.Item>
-          <Menubar.Item><a href="/auth/login">Login</a></Menubar.Item>
+          <Menubar.Item><a href="/auth/signin">Sign in</a></Menubar.Item>
         </Menubar.Content>
 
       </Menubar.Menu>
