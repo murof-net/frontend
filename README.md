@@ -26,5 +26,6 @@ npm run dev -- --open
 - [ ] app page with toolbar and ...
   - [ ] Dashboard page
   - [ ] Module page
+- [ ] Deploy (with [Vercel](https://vercel.com/docs/frameworks/sveltekit))
 - [ ] add features/pricing to landing page
 - [ ] theme customization
