@@ -23,7 +23,7 @@ npm run dev -- --open
 - [x] Hero page
 - [ ] login page
 - [ ] interaction with back-end
-- [ ] app page with toolbar and ...
+- [ ] app page with [toolbar](https://lucide.dev/icons/?search=learn) and ...
   - [ ] Dashboard page
   - [ ] Module page
 - [ ] Deploy (with [Vercel](https://vercel.com/docs/frameworks/sveltekit))
