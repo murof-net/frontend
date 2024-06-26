@@ -21,7 +21,8 @@ npm run dev -- --open
 
 ## Roadmap
 - [x] Hero page
-- [ ] login page
+- [x] login page
+- [ ] login form & authentication
 - [ ] interaction with back-end
 - [ ] app page with [toolbar](https://lucide.dev/icons/?search=learn) and ...
   - [ ] Dashboard page

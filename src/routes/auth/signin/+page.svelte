@@ -1,11 +1,13 @@
 <script lang="ts">
+    import LoginMdImage from "$lib/components/custom/LoginMdImage.svelte";
+
     import { Button } from "$lib/components/ui/button"
     import { Input } from "$lib/components/ui/input"
     import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter} from "$lib/components/ui/card"
-    
     import { toggleMode } from "mode-watcher";
     import Sun from "lucide-svelte/icons/sun";
     import Moon from "lucide-svelte/icons/moon";
+
     // import Google from "lucide-svelte/icons/google"; doesn't exist
     import Github from "lucide-svelte/icons/github";
     import Facebook from "lucide-svelte/icons/facebook";
@@ -30,20 +32,12 @@
 </div>
 
 <div class="flex flex-col items-center justify-center h-screen bg-base-100 lg:flex-row bg-muted">
-    <div class="bg-background hidden lg:block h-full order-1 w-full lg:w-1/2 p-0 m-0">
-        <div class="relative z-20 flex items-center justify-center h-full bg-cover bg-center bg-no-repeat" style="background-image: url('/path/to/your/image.svg');">
-            <a href="/" class="h-full">
-                <img src="/logo-extended.svg" alt="logo" class="dark:invert object-contain h-full" />
-            </a>
-            <blockquote class="absolute left-0 bottom-0 space-y-2 p-6 bg-white bg-opacity-65">
-                <p class="text-lg">“Learning has never felt more intuitive!”</p>
-                <footer class="text-sm">Robbe</footer>
-            </blockquote>
-        </div>
-    </div>
+
+    <LoginMdImage />
+
     <div class="order-2 w-full lg:w-1/2">
         <div class="flex justify-center items-start text-center">
-            <Card class="p-4">
+            <Card class="p-4 m-4">
                 <CardHeader>
                     <CardTitle class="font-robomo text-3xl font-bold p-2">Sign in</CardTitle>
                     <CardDescription class="text-balance text-muted-foreground p-1">

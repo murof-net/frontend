@@ -22,7 +22,7 @@
   });
 </script>
 
-<div class="flex flex-col items-center justify-center h-screen bg-base-100 lg:flex-row mt-[-1rem] md:mt-[-3rem] lg:mt-[-4.5rem]">
+<div class="flex flex-col items-center justify-center h-screen bg-base-100 lg:flex-row mt-[-1rem] md:mt-[-3rem] lg:mt-[-4.5rem] p-4">
   <div class="order-1 w-full lg:w-1/2">
     <div class="flex justify-center items-start">
       <!-- <img src="landing-logo.svg" alt="Animated SVG" class="object-cover w-full dark:invert"> -->
