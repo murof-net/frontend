@@ -1,5 +1,6 @@
 <script lang="ts">
     import LoginMdImage from "$lib/components/custom/LoginMdImage.svelte";
+    import { enhance } from '$app/forms';
 
     import { Button } from "$lib/components/ui/button"
     import { Input } from "$lib/components/ui/input"
@@ -12,6 +13,22 @@
     import Github from "lucide-svelte/icons/github";
     import Facebook from "lucide-svelte/icons/facebook";
     import Linkedin from "lucide-svelte/icons/linkedin";
+
+    async function handleSubmit(event) {
+        const formData = new FormData(event.target);
+        const response = await fetch('/auth/signin', {
+        method: 'POST',
+        body: formData
+        });
+        if (response.ok) {
+            // Handle successful login (redirect, display message, etc.)
+            console.log('Login successful!');
+        } else {
+            // Handle login errors (display error messages)
+            const errorData = await response.json();
+            console.error('Login failed:', errorData);
+        }
+    }
 </script>
 
 <div class="absolute top-2 right-1 p-1">
@@ -46,24 +63,29 @@
             </CardHeader>
             <CardContent>
                 <div class="grid gap-4">
-                    <div class="grid gap-2">
-                        <Input
-                            id="email"
-                            type="email"
-                            placeholder="first.last@example.com"
-                            required
-                        />
-                    </div>
-                    <div class="grid gap-2">
-                        <Input
-                            id="password"
-                            type="password"
-                            placeholder="Password"
-                            required
-                        />
-                    <Button class="w-full my-1">
-                        Sign in with email
-                    </Button>
+                    <form method="POST" action="?/signin" use:enhance={handleSubmit}>
+                        <div class="grid gap-2 my-2">
+                            <Input
+                                id="email"
+                                name="email"
+                                type="email"
+                                placeholder="first.last@example.com"
+                                required
+                            />
+                        </div>
+                        <div class="grid gap-2 my-2">
+                            <Input
+                                id="password"
+                                name="password"
+                                type="password"
+                                placeholder="Password"
+                                required
+                            />
+                        </div>
+                        <Button type="submit" class="w-full my-1">
+                            Sign in with email
+                        </Button>
+                    </form>
                     <div class="relative my-1">
                         <div class="absolute inset-0 flex items-center">
                             <span class="w-full border-t"></span>
