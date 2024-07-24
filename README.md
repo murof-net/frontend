@@ -20,13 +20,15 @@ npm run dev -- --open
 ```
 
 ## Roadmap
-- [x] Hero page
+- [x] hero page
 - [x] login page
 - [ ] login form & authentication
 - [ ] interaction with back-end
+- [ ] blog (using [mdsvex](https://mdsvex.pngwn.io/)), tags and pinned manifesto post
 - [ ] app page with [toolbar](https://lucide.dev/icons/?search=learn) and ...
-  - [ ] Dashboard page
-  - [ ] Module page
+  - [ ] dashboard page
+  - [ ] profile page
+  - [ ] module page
 - [ ] Deploy (with [Vercel](https://vercel.com/docs/frameworks/sveltekit))
 - [ ] add features/pricing to landing page
 - [ ] theme customization
