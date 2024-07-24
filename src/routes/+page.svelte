@@ -21,10 +21,13 @@
           <a href="#features">Features</a>
         </Menubar.Item>
         <Menubar.Item class="hidden text-foreground/70 transition-colors hover:text-foreground/85 lg:block pr-8">
-          <a href="#pricing">Pricing</a>
+          <a href="#pricing">Plans</a>
+        </Menubar.Item>
+        <Menubar.Item class="hidden text-foreground/70 transition-colors hover:text-foreground/85 lg:block pr-8">
+          <a href="#faq">FAQ</a>
         </Menubar.Item>
 
-        <div class="flex float-right justify-end w-full">
+        <div class="w-full flex justify-between md:float-right md:justify-end">
           <Menubar.Item>
             <Button on:click={toggleMode} variant="outline">
               <Sun class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"/>
@@ -32,17 +35,17 @@
               <span class="sr-only">Toggle theme</span>
             </Button>
           </Menubar.Item>
+          <Menubar.Item>
+            <a href="/blog">
+              <Button variant="outline">Learn more</Button>
+            </a>
+          </Menubar.Item>
+          <Menubar.Item>
+            <a href="/auth">
+              <Button variant="default">Start now</Button>
+            </a>
+          </Menubar.Item>
         </div>
-
-        <Menubar.Trigger class="p-0">
-          <Button variant="default">Start now</Button>
-        </Menubar.Trigger>
-        <Menubar.Content>
-          <Menubar.Item><a href="/test">Learn more</a></Menubar.Item>
-          <Menubar.Separator />
-          <Menubar.Item><a href="/auth/signup">Sign up</a></Menubar.Item>
-          <Menubar.Item><a href="/auth/signin">Sign in</a></Menubar.Item>
-        </Menubar.Content>
 
       </Menubar.Menu>
     </div>

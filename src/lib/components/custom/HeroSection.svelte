@@ -175,14 +175,14 @@
     </div>
   </div>
   <div class="order-2 w-full lg:w-1/2 lg:max-w-[50%]">
-    <div class="p-4 bg-base-100 rounded-md text-left md:text-left md:pl-12 md:pr-0">
+    <div class="p-4 bg-base-100 rounded-md text-left md:pl-12 md:pr-20">
       <h1 class="font-robomo text-3xl lg:text-5xl font-bold mb-4">
         It's education, <br>
         but based <span class="opacity-40" bind:this={typingNode}></span>
       </h1>
       <p class="text-lg py-1 mb-4">
-        Empowering students and teachers through a personalized, collaborative and data-driven educational experience.
-        Say goodbye to courses-in-a-vacuum, and hello to a new way of learning!
+        Empowering curiosity through data-driven, personalized and collaborative learning.
+        Say goodbye to knowledge-in-a-vacuum, and hello to a new way of thinking!
       </p>
       <Button variant="default" class="mr-2">
         <a href="/auth/signup">Get started today</a>
