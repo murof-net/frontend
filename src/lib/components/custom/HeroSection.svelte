@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { Button } from "$lib/components/ui/button";
+  import * as HoverCard from "$lib/components/ui/hover-card/index.js";
   import { animateTyping } from "$lib/components/custom/functions/animateTyping";
   import "./HeroAnimation.css";
 
@@ -178,11 +179,24 @@
     <div class="p-4 bg-base-100 rounded-md text-left md:pl-12 md:pr-20">
       <h1 class="font-robomo text-3xl lg:text-5xl font-bold mb-4">
         It's education, <br>
-        but based <span class="opacity-40" bind:this={typingNode}></span>
+        but 
+          <HoverCard.Root>
+            <HoverCard.Trigger href="https://www.urbandictionary.com/define.php?term=based" target="_blank" rel="noreferrer noopener">
+              <span class="underline hover:bg-primary/25 hover:no-underline underline-offset-8 decoration-2 decoration-primary/40 rounded inline-block p-1">
+                based
+              </span>              
+            </HoverCard.Trigger>
+            <HoverCard.Content class="w-80 md:w-96">
+                <p class="mb-4">A word used when you agree with something; or when you want to recognize someone for being themselves, i.e. courageous and unique or not caring what others think. Especially common in online political slang.</p>
+                <p class="my-4">The opposite of cringe, some times the opposite of biased.</p>
+                <p class="mt-4 text-muted-foreground">- <a href="https://www.urbandictionary.com/">Urban Dictionary</a> (2024)</p>
+            </HoverCard.Content>
+          </HoverCard.Root>
+        <span class="opacity-40" bind:this={typingNode}></span>
       </h1>
       <p class="text-lg py-1 mb-4">
-        Empowering curiosity through data-driven, personalized and collaborative learning.
-        Say goodbye to knowledge-in-a-vacuum, and hello to a new way of thinking!
+        Empowering curiosity through data-driven, personalized and collaborative thinking.
+        Say goodbye to knowledge-in-a-vacuum and hello to learning with purpose!
       </p>
       <Button variant="default" class="mr-2">
         <a href="/auth/signup">Get started today</a>
