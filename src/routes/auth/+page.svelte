@@ -38,21 +38,9 @@
         </CardHeader>
         <CardContent>
             <div class="grid gap-4">
+                
                 <AuthForm data={data.form} />
-                <!-- <form method="POST" action="?" use:enhance={handleSubmit}>
-                    <div class="grid gap-2 my-2">
-                        <Input
-                            id="email"
-                            name="email"
-                            type="email"
-                            placeholder="email@example.com"
-                            required
-                        />
-                    </div>
-                    <Button type="submit" class="w-full my-1">
-                        Continue with email
-                    </Button>
-                </form> -->
+
                 <div class="relative my-1">
                     <div class="absolute inset-0 flex items-center">
                         <span class="w-full border-t"></span>

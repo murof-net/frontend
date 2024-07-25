@@ -5,6 +5,10 @@
     import { Input } from "$lib/components/ui/input"
     import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter} from "$lib/components/ui/card"
     import AlternativeAuth from "$lib/components/custom/AlternativeAuth.svelte";
+    
+    import type { PageData } from "./$types.js";
+    import RegisterForm from "./register-form.svelte";
+    export let data: PageData;
 
     async function handleSubmit(event) {
         const formData = new FormData(event.target);
@@ -24,89 +28,20 @@
 </script>
 
 <div class="w-full">
-    <div class="flex justify-center items-center text-center">
+    <div class="flex justify-center items-center">
         <Card class="p-4 m-4">
         <CardHeader>
-            <CardTitle class="font-robomo text-3xl font-bold p-2">Registration</CardTitle>
-            <CardDescription class="text-balance text-muted-foreground p-1">
-                Enter your details to create your account. Alternatively, go to <a class="underline hover:text-primary" href="/auth/login">login</a> or the <a class="underline hover:text-primary" href="/">homepage</a>
+            <CardTitle class="font-robomo text-3xl font-bold p-2 text-center">Registration</CardTitle>
+            <CardDescription class="text-balance text-muted-foreground p-1 text-center">
+                Enter your details to create an account. Alternatively, go to <a class="underline hover:text-primary" href="/auth/login">login</a> or the <a class="underline hover:text-primary" href="/">homepage</a>
             </CardDescription>
         </CardHeader>
+
         <CardContent>
             <div class="grid gap-4">
-                <form method="POST" action="?" use:enhance={handleSubmit}>
-                    <p class="mb-3 text-left">General information</p>
-                    <div class="grid md:grid-cols-2 gap-2 mb-2 md:mb-4">
-                        <Input
-                            id="firstname"
-                            name="firstname"
-                            type="text"
-                            placeholder="First name"
-                            required
-                        />
-                        <Input
-                            id="lastname"
-                            name="lastname"
-                            type="text"
-                            placeholder="Last name"
-                            required
-                        />
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-2 mb-4">
-                        <Input
-                            id="email"
-                            name="email"
-                            type="email"
-                            placeholder="Email address"
-                            required
-                        />
-                        <Input
-                            id="username"
-                            name="username"
-                            type="text"
-                            placeholder="Username"
-                            required
-                        />
-                    </div>
-                    <p class="my-3 text-left">Password and confimation</p>
-                    <div class="grid md:grid-cols-2 gap-2 mb-4">
-                        <Input
-                            id="password"
-                            name="password"
-                            type="password"
-                            placeholder="Password"
-                            required
-                        />
-                        <Input
-                            id="password_confirmation"
-                            name="password_confirmation"
-                            type="password"
-                            placeholder="Confirm password"
-                            required
-                        />
-                    </div>
-                    <p class="my-3 text-left">Birthdate and language skills</p>
-                    <div class="grid md:grid-cols-2 gap-2 mb-4">
-                        <Input
-                            id="birthdate"
-                            name="birthdate"
-                            type="date"
-                            placeholder="Birth date"
-                            required
-                            class="text-muted-foreground"
-                        />
-                        <Input
-                            id="languages"
-                            name="languages"
-                            type="text"
-                            placeholder="Languages"
-                            required
-                        />
-                    </div>
-                    <Button type="submit" class="w-full my-1">
-                        Register with email
-                    </Button>
-                </form>
+                
+                <RegisterForm data={data.form} />
+
                 <div class="relative my-1">
                     <div class="absolute inset-0 flex items-center">
                         <span class="w-full border-t"></span>
@@ -122,6 +57,7 @@
                 
             </div>
         </CardContent>
+        
         <CardFooter>
             <p class="px-8 text-center text-sm text-muted-foreground">
                 By clicking continue, you agree to our 

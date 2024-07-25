@@ -6,57 +6,41 @@
     import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter} from "$lib/components/ui/card"
     import AlternativeAuth from "$lib/components/custom/AlternativeAuth.svelte";
 
-    async function handleSubmit(event) {
-        const formData = new FormData(event.target);
-        const response = await fetch('/auth/signin', {
-        method: 'POST',
-        body: formData
-        });
-        if (response.ok) {
-            // Handle successful login (redirect, display message, etc.)
-            console.log('Login successful!');
-        } else {
-            // Handle login errors (display error messages)
-            const errorData = await response.json();
-            console.error('Login failed:', errorData);
-        }
-    }
+    import type { PageData } from "./$types.js";
+    import LoginForm from "./login-form.svelte";
+    export let data: PageData;
+
+    // async function handleSubmit(event) {
+    //     const formData = new FormData(event.target);
+    //     const response = await fetch('/auth/signin', {
+    //     method: 'POST',
+    //     body: formData
+    //     });
+    //     if (response.ok) {
+    //         // Handle successful login (redirect, display message, etc.)
+    //         console.log('Login successful!');
+    //     } else {
+    //         // Handle login errors (display error messages)
+    //         const errorData = await response.json();
+    //         console.error('Login failed:', errorData);
+    //     }
+    // }
 </script>
 
 <div class="w-full">
-    <div class="flex justify-center items-center text-center">
+    <div class="flex justify-center items-center">
         <Card class="p-4 m-4">
         <CardHeader>
-            <CardTitle class="font-robomo text-3xl font-bold p-2">Login</CardTitle>
-            <CardDescription class="text-balance text-muted-foreground p-1">
+            <CardTitle class="font-robomo text-3xl font-bold p-2 text-center">Login</CardTitle>
+            <CardDescription class="text-balance text-muted-foreground p-1 text-center">
                 Enter your details to access your account. Alternatively, go to <a class="underline hover:text-primary" href="/auth/register">registration</a> or the <a class="underline hover:text-primary" href="/">homepage</a>
             </CardDescription>
         </CardHeader>
         <CardContent>
             <div class="grid gap-4">
-                <form method="POST" action="?" use:enhance={handleSubmit}>
-                    <div class="grid gap-2 my-2">
-                        <Input
-                            id="email"
-                            name="email"
-                            type="email"
-                            placeholder="email@example.com"
-                            required
-                        />
-                    </div>
-                    <div class="grid gap-2 my-2">
-                        <Input
-                            id="password"
-                            name="password"
-                            type="password"
-                            placeholder="password"
-                            required
-                        />
-                    </div>
-                    <Button type="submit" class="w-full my-1">
-                        Login with email
-                    </Button>
-                </form>
+
+                <LoginForm data={data.form} />
+
                 <div class="relative my-1">
                     <div class="absolute inset-0 flex items-center">
                         <span class="w-full border-t"></span>
