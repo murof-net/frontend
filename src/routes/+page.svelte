@@ -107,7 +107,7 @@
 </section>
 
 <!-- FAQ section -->
-<section id="faq" class="container pt-16 mb-5">
+<section id="faq" class="container pt-16 mb-12">
   <h2 class="font-robomo text-4xl font-bold mb-8">FAQs</h2>
   <Accordion.Root class="w-full">
     <Accordion.Item value="item-1">
