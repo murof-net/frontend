@@ -105,6 +105,10 @@
 </section>
 
 <!-- Footer -->
-<footer class="container mt-16">
-  <p class="text-center">© {year} murof</p>
+<footer class="mt-2 py-4 bg-background/95">
+  <div class="container mx-auto px-4">
+      <div class="flex justify-center items-center">
+          <p class="text-sm text-gray-500">© {year} Murof. All rights reserved.</p>
+      </div>
+  </div>
 </footer>

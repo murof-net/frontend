@@ -182,7 +182,7 @@
         but 
           <HoverCard.Root>
             <HoverCard.Trigger href="https://www.urbandictionary.com/define.php?term=based" target="_blank" rel="noreferrer noopener">
-              <span class="underline hover:bg-primary/25 hover:no-underline underline-offset-8 decoration-2 decoration-primary/40 rounded inline-block p-1">
+              <span class="underline hover:bg-primary/25 hover:no-underline underline-offset-4 md:underline-offset-8 decoration-2 decoration-primary/40 rounded inline-block p-1">
                 based
               </span>              
             </HoverCard.Trigger>
@@ -199,7 +199,7 @@
         Say goodbye to knowledge-in-a-vacuum and hello to learning with purpose!
       </p>
       <Button variant="default" class="mr-2">
-        <a href="/auth/signup">Get started today</a>
+        <a href="/auth">Get started today</a>
       </Button>
       <Button variant="outline">
         <a href="/test">Watch our demo</a>

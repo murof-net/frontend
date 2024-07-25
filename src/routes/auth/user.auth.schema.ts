@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 
-export const UserSignupSchema = z.object({
+export const UserRegisterSchema = z.object({
     firstName: z
 		.string({
 			required_error: 'First name is required'
@@ -47,7 +47,7 @@ export const UserSignupSchema = z.object({
 	});
 
 
-export const UserSigninSchema = z.object({
+export const UserLoginSchema = z.object({
     email: z
 		.string({
 			required_error: 'Email is required'
@@ -65,5 +65,5 @@ export const UserSigninSchema = z.object({
         .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/, 'Password must contain at least one uppercase letter, one lowercase letter and one number')
     });
 
-export type UserSignupInput = z.infer<typeof UserSignupSchema>;
-export type UserSigninInput = z.infer<typeof UserSigninSchema>;
+export type UserSignupInput = z.infer<typeof UserRegisterSchema>;
+export type UserSigninInput = z.infer<typeof UserLoginSchema>;
