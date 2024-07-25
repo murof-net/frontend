@@ -198,7 +198,7 @@
         Empowering curiosity through data-driven, personalized and collaborative thinking.
         Say goodbye to knowledge-in-a-vacuum and hello to learning with purpose!
       </p>
-      <Button variant="default" class="mr-2">
+      <Button variant="default" class="mb-3 mr-3">
         <a href="/auth">Get started today</a>
       </Button>
       <Button variant="outline">

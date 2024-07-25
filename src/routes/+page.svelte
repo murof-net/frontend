@@ -1,5 +1,7 @@
 <script lang="ts">
   import HeroSection from "$lib/components/custom/HeroSection.svelte";
+  import Footer from "$lib/components/custom/Footer.svelte";
+  import * as Accordion from "$lib/components/ui/accordion/index.js";
 
   import { Button } from "$lib/components/ui/button";
   import * as Card from "$lib/components/ui/card";
@@ -21,7 +23,7 @@
           <a href="#features">Features</a>
         </Menubar.Item>
         <Menubar.Item class="hidden text-foreground/70 transition-colors hover:text-foreground/85 lg:block pr-8">
-          <a href="#pricing">Plans</a>
+          <a href="#plans">Plans</a>
         </Menubar.Item>
         <Menubar.Item class="hidden text-foreground/70 transition-colors hover:text-foreground/85 lg:block pr-8">
           <a href="#faq">FAQ</a>
@@ -55,7 +57,7 @@
 <HeroSection />
 
 <!-- Features section -->
-<section id="features" class="container mt-16">
+<section id="features" class="container pt-16 mt-4">
   <h2 class="font-robomo text-4xl font-bold mb-8">Features</h2>
   <div class="grid grid-cols-1 gap-8 md:grid-cols-2 pb-8">
     <div><img src="https://placeimg.com/500/300/arch" alt="feature 1" /></div>
@@ -79,9 +81,9 @@
   </div>
 </section>
 
-<!-- Pricing section -->
-<section id="pricing" class="container mt-16">
-  <h2 class="font-robomo text-4xl font-bold mb-8">Pricing</h2>
+<!-- Plans section -->
+<section id="plans" class="container pt-16">
+  <h2 class="font-robomo text-4xl font-bold mb-8">Plans</h2>
   <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
     <Card.Root class="bg-base-100">
       <Card.Header>
@@ -104,11 +106,31 @@
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="mt-2 py-4 bg-background/95">
-  <div class="container mx-auto px-4">
-      <div class="flex justify-center items-center">
-          <p class="text-sm text-gray-500">© {year} Murof. All rights reserved.</p>
-      </div>
-  </div>
-</footer>
+<!-- FAQ section -->
+<section id="faq" class="container pt-16 mb-5">
+  <h2 class="font-robomo text-4xl font-bold mb-8">FAQs</h2>
+  <Accordion.Root class="w-full">
+    <Accordion.Item value="item-1">
+      <Accordion.Trigger>Is it accessible?</Accordion.Trigger>
+      <Accordion.Content
+        >Yes. It adheres to the WAI-ARIA design pattern.</Accordion.Content
+      >
+    </Accordion.Item>
+    <Accordion.Item value="item-2">
+      <Accordion.Trigger>Is it styled?</Accordion.Trigger>
+      <Accordion.Content>
+        Yes. It comes with default styles that matches the other components'
+        aesthetic.
+      </Accordion.Content>
+    </Accordion.Item>
+    <Accordion.Item value="item-3">
+      <Accordion.Trigger>Is it animated?</Accordion.Trigger>
+      <Accordion.Content>
+        Yes. It's animated by default, but you can disable it if you prefer.
+      </Accordion.Content>
+    </Accordion.Item>
+  </Accordion.Root>
+</section>
+
+
+<Footer />

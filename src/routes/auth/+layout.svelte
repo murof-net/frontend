@@ -1,10 +1,10 @@
 <script lang="ts">
-    export let data;
     import * as Menubar from "$lib/components/ui/menubar";
     import { Button } from "$lib/components/ui/button"
     import { toggleMode } from "mode-watcher";
     import Sun from "lucide-svelte/icons/sun";
     import Moon from "lucide-svelte/icons/moon";
+    import Footer from "$lib/components/custom/Footer.svelte";
 
     const year = new Date().getFullYear();
 </script>
@@ -37,14 +37,10 @@
             </div>
         </Menubar.Root>
     </header>
+
     <div class="flex justify-center items-center flex-grow">
         <slot />
     </div>
-    <footer class="mt-2 py-4 bg-background/95">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-center items-center">
-                <p class="text-sm text-gray-500">© {year} Murof. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+
+    <Footer />
 </div>
