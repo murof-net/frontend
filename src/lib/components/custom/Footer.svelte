@@ -2,7 +2,7 @@
     const year = new Date().getFullYear();
 </script>
 
-<footer class="py-5 bg-background/95">
+<footer class="pb-5 pt-7 bg-background/95">
     <div class="container">
         <!-- grid with site sections -->
         <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-4">
