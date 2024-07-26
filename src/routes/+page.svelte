@@ -57,7 +57,7 @@
 <HeroSection />
 
 <!-- Features section -->
-<section id="features" class="container pt-16 mt-4">
+<section id="features" class="container pt-4 md:pt-16 mt-4">
   <h2 class="font-robomo text-4xl font-bold mb-8">Features</h2>
   <div class="grid grid-cols-1 gap-8 md:grid-cols-2 pb-8">
     <div><img src="https://placeimg.com/500/300/arch" alt="feature 1" /></div>
@@ -82,7 +82,7 @@
 </section>
 
 <!-- Plans section -->
-<section id="plans" class="container pt-16">
+<section id="plans" class="container pt-4 md:pt-16">
   <h2 class="font-robomo text-4xl font-bold mb-8">Plans</h2>
   <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
     <Card.Root class="bg-base-100">
@@ -107,7 +107,7 @@
 </section>
 
 <!-- FAQ section -->
-<section id="faq" class="container pt-16 mb-12">
+<section id="faq" class="container py-12 md:pt-16">
   <h2 class="font-robomo text-4xl font-bold mb-8">FAQs</h2>
   <Accordion.Root class="w-full">
     <Accordion.Item value="item-1">

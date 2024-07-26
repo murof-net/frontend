@@ -20,8 +20,8 @@
                 <ul class="mt-2">
                     <li class="text-sm text-accent-foreground/75">Partnerships</li>
                     <li class="text-sm text-accent-foreground/75">Support</li>
-                    <li class="text-sm text-accent-foreground/75">Legal</li>
                     <li class="text-sm text-accent-foreground/75">Careers</li>
+                    <li class="text-sm text-accent-foreground/75">Legal</li>
                 </ul>
             </div>
             <div class="flex flex-col">
