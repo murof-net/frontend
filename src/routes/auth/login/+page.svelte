@@ -4,7 +4,13 @@
 
     import type { PageData } from "./$types.js";
     import LoginForm from "./login-form.svelte";
-    export let data: PageData;
+	import { page } from "$app/stores";
+
+    let initialEmail = "";
+
+    page.subscribe(newPage => {
+        initialEmail = newPage.url.searchParams.get('email') || '';
+    });
 </script>
 
 <div class="w-full">
@@ -19,7 +25,7 @@
         <CardContent>
             <div class="grid gap-4">
 
-                <LoginForm data={data.form} />
+                <LoginForm initialEmail={initialEmail} />
 
                 <div class="relative my-1">
                     <div class="absolute inset-0 flex items-center">

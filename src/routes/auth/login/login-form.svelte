@@ -9,9 +9,12 @@
   } from "sveltekit-superforms";
   import { zodClient } from "sveltekit-superforms/adapters";
 
-  export let data: SuperValidated<Infer<LoginSchema>>;
+  export let initialEmail: string;
 
-  const form = superForm(data, {
+  const form = superForm({
+    email: initialEmail,
+    password: ''
+  }, {
     validators: zodClient(loginSchema),
   });
 
