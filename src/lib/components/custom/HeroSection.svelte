@@ -176,34 +176,40 @@
     </div>
   </div>
   <div class="order-2 w-full lg:w-1/2 lg:max-w-[50%]">
-    <div class="p-4 bg-base-100 rounded-md text-left md:pl-12 md:pr-20">
-      <h1 class="font-robomo text-3xl lg:text-5xl font-bold mb-4">
-        It's education, <br>
-        but 
-          <HoverCard.Root>
-            <HoverCard.Trigger href="https://www.urbandictionary.com/define.php?term=based" target="_blank" rel="noreferrer noopener">
-              <span class="underline hover:bg-primary/25 hover:no-underline underline-offset-4 md:underline-offset-8 decoration-2 decoration-primary/40 rounded inline-block p-1">
-                based
-              </span>              
-            </HoverCard.Trigger>
-            <HoverCard.Content class="w-80 md:w-96">
-                <p class="mb-4">A word used when you agree with something; or when you want to recognize someone for being themselves, i.e. courageous and unique or not caring what others think. Especially common in online political slang.</p>
-                <p class="my-4">The opposite of cringe, some times the opposite of biased.</p>
-                <p class="mt-4 text-muted-foreground">- <a href="https://www.urbandictionary.com/">Urban Dictionary</a> (2024)</p>
-            </HoverCard.Content>
-          </HoverCard.Root>
-        <span class="opacity-40" bind:this={typingNode}></span>
-      </h1>
-      <p class="text-lg py-1 mb-4">
-        Empowering curiosity through data-driven, personalized and collaborative thinking.
-        Say goodbye to knowledge-in-a-vacuum and hello to learning with purpose!
-      </p>
-      <Button variant="default" class="mb-3 mr-3">
-        <a href="/auth">Get started today</a>
-      </Button>
-      <Button variant="outline">
-        <a href="/test">Watch our demo</a>
-      </Button>
+    <div class="p-2 bg-base-100 rounded-md text-left md:pl-4 md:pr-12">
+      <div class="container p-0">
+      <div class="container p-0">
+        <h1 class="font-robomo text-3xl lg:text-5xl font-bold mb-4">
+          It's education, <br>
+          but 
+            <HoverCard.Root>
+              <HoverCard.Trigger href="https://www.urbandictionary.com/define.php?term=based" target="_blank" rel="noreferrer noopener">
+                <span class="underline hover:bg-primary/25 hover:no-underline underline-offset-2 md:underline-offset-4 decoration-2 decoration-primary/40 rounded inline-block p-0.5">
+                  based
+                </span>              
+              </HoverCard.Trigger>
+              <HoverCard.Content class="w-80 md:w-96">
+                  <p class="mb-4">A word used when you agree with something; or when you want to recognize someone for being themselves, i.e. courageous and unique or not caring what others think. Especially common in online political slang.</p>
+                  <p class="my-4">The opposite of cringe, some times the opposite of biased.</p>
+                  <p class="mt-4 text-muted-foreground">- <a href="https://www.urbandictionary.com/">Urban Dictionary</a> (2024)</p>
+              </HoverCard.Content>
+            </HoverCard.Root>
+          <span class="opacity-40" bind:this={typingNode}></span>
+        </h1>
+      </div>
+      <div class="container p-0">
+        <p class="text-lg py-1 mb-4">
+          Empowering curiosity through data-driven, personalized and collaborative thinking.
+          Say goodbye to knowledge-in-a-vacuum and hello to learning with purpose!
+        </p>
+        <Button variant="default" class="mb-2 mr-2">
+          <a href="/auth">Get started today</a>
+        </Button>
+        <Button variant="outline">
+          <a href="/test">Watch our demo</a>
+        </Button>
+      </div>
+    </div>
     </div>
   </div>
 </div>

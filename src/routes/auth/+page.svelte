@@ -57,7 +57,7 @@
             </div>
         </CardContent>
         <CardFooter>
-            <p class="px-8 text-center text-sm text-muted-foreground text-center">
+            <p class="px-8 text-center text-sm text-muted-foreground">
                 By clicking continue, you agree to our 
                 <a class="underline underline-offset-4 hover:text-primary" href="/terms">
                     Terms of Service

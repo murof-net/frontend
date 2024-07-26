@@ -10,21 +10,21 @@
     import RegisterForm from "./register-form.svelte";
     export let data: PageData;
 
-    async function handleSubmit(event) {
-        const formData = new FormData(event.target);
-        const response = await fetch('/auth/signin', {
-        method: 'POST',
-        body: formData
-        });
-        if (response.ok) {
-            // Handle successful login (redirect, display message, etc.)
-            console.log('Login successful!');
-        } else {
-            // Handle login errors (display error messages)
-            const errorData = await response.json();
-            console.error('Login failed:', errorData);
-        }
-    }
+    // async function handleSubmit(event) {
+    //     const formData = new FormData(event.target);
+    //     const response = await fetch('/auth/signin', {
+    //     method: 'POST',
+    //     body: formData
+    //     });
+    //     if (response.ok) {
+    //         // Handle successful login (redirect, display message, etc.)
+    //         console.log('Login successful!');
+    //     } else {
+    //         // Handle login errors (display error messages)
+    //         const errorData = await response.json();
+    //         console.error('Login failed:', errorData);
+    //     }
+    // }
 </script>
 
 <div class="w-full">
