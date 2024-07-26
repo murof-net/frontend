@@ -1,3 +1,6 @@
+// Loads the form data on the server side, 
+// initializing it with validation.
+
 import type { PageServerLoad } from './$types';
 import { superValidate } from "sveltekit-superforms";
 import { authSchema } from "./auth-schema";

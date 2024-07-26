@@ -1,30 +1,10 @@
 <script lang="ts">
-    import { enhance } from '$app/forms';
-
-    import { Button } from "$lib/components/ui/button"
-    import { Input } from "$lib/components/ui/input"
     import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter} from "$lib/components/ui/card"
     import AlternativeAuth from "$lib/components/custom/AlternativeAuth.svelte";
 
     import type { PageData } from "./$types.js";
     import AuthForm from "./auth-form.svelte"
     export let data: PageData;
-
-    // async function handleSubmit(event) {
-    //     const formData = new FormData(event.target);
-    //     const response = await fetch('/auth/signin', {
-    //     method: 'POST',
-    //     body: formData
-    //     });
-    //     if (response.ok) {
-    //         // Handle successful login (redirect, display message, etc.)
-    //         console.log('Login successful!');
-    //     } else {
-    //         // Handle login errors (display error messages)
-    //         const errorData = await response.json();
-    //         console.error('Login failed:', errorData);
-    //     }
-    // }
 </script>
 
 <div class="w-full">
