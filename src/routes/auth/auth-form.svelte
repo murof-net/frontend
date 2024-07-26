@@ -26,5 +26,7 @@
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
-  <Form.Button class="w-full">Continue with email</Form.Button>
+  <Form.Button class="w-full my-1">
+    Continue with email
+  </Form.Button>
 </form>

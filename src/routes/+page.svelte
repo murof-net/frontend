@@ -19,13 +19,13 @@
     <div class="container flex max-w-9xl items-center p-1">
       <Menubar.Menu>
 
-        <Menubar.Item class="hidden text-foreground/70 transition-colors hover:text-foreground/85 lg:block pr-8">
+        <Menubar.Item class="hidden text-foreground/70 transition-colors hover:text-foreground/85 md:block pr-8">
           <a href="#features">Features</a>
         </Menubar.Item>
-        <Menubar.Item class="hidden text-foreground/70 transition-colors hover:text-foreground/85 lg:block pr-8">
+        <Menubar.Item class="hidden text-foreground/70 transition-colors hover:text-foreground/85 md:block pr-8">
           <a href="#plans">Plans</a>
         </Menubar.Item>
-        <Menubar.Item class="hidden text-foreground/70 transition-colors hover:text-foreground/85 lg:block pr-8">
+        <Menubar.Item class="hidden text-foreground/70 transition-colors hover:text-foreground/85 md:block pr-8">
           <a href="#faq">FAQ</a>
         </Menubar.Item>
 
