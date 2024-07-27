@@ -10,39 +10,33 @@
     superForm,
   } from "sveltekit-superforms";
   import { zodClient } from "sveltekit-superforms/adapters";
+
   export let data: SuperValidated<Infer<AuthSchema>>;
   const form = superForm(data, {
     validators: zodClient(authSchema),
   });
   const { form: formData, enhance } = form;
-  let alertTitle = '';
-  let alertMessage = '';
-  let showLoginRegisterButtons = false;
 
-  // Handle form submission
-  async function handleSubmit(event: CustomEvent) {
-    const { result } = event.detail;
-    console.log("result in auth-form.svelte: ");
-    console.log(result);
-    if (result.success) {
-      alertTitle = 'Sign up successful!';
-      alertMessage = "You've successfully signed up to our newsletter! Thank you 🥰";
-      showLoginRegisterButtons = true;
-      console.log("showLoginRegisterButtons: ", showLoginRegisterButtons);
-      toast.success(alertTitle, {
-        description: alertMessage
-      });
-    } else {
-      alertTitle = 'Sign up failed!';
-      alertMessage = "An error occurred while signing up to our newsletter. Please try again later 😥";
-      toast.error(alertTitle, {
-        description: alertMessage
-      });
-    }
-  }
+  // let promise = load('/auth');
+  // async function handleSubmit(event) {
+  //   const { form, result } = await promise;
+  //   console.log("handleSubmit");
+  //   console.log(event);
+  //   console.log($formData);
+  //   const result = await form.submit();
+  //   if (result.success) {
+  //       toast.success(result.message, {
+  //         description: result.description,
+  //       });
+  //     } else {
+  //       toast.error(result.message, {
+  //         description: result.description,
+  //       });
+  //     }
+  //   }
 </script>
 
-<form method="POST" use:enhance on:submit={handleSubmit}>
+<form method="POST" use:enhance>
   <div class="grid gap-2 mb-4">
     <Form.Field {form} name="email">
       <Form.Control let:attrs>
