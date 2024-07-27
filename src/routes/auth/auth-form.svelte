@@ -16,24 +16,6 @@
     validators: zodClient(authSchema),
   });
   const { form: formData, enhance } = form;
-
-  // let promise = load('/auth');
-  // async function handleSubmit(event) {
-  //   const { form, result } = await promise;
-  //   console.log("handleSubmit");
-  //   console.log(event);
-  //   console.log($formData);
-  //   const result = await form.submit();
-  //   if (result.success) {
-  //       toast.success(result.message, {
-  //         description: result.description,
-  //       });
-  //     } else {
-  //       toast.error(result.message, {
-  //         description: result.description,
-  //       });
-  //     }
-  //   }
 </script>
 
 <form method="POST" use:enhance>
