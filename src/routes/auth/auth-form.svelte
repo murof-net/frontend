@@ -10,34 +10,21 @@
     superForm,
   } from "sveltekit-superforms";
   import { zodClient } from "sveltekit-superforms/adapters";
-
   export let data: SuperValidated<Infer<AuthSchema>>;
-
   const form = superForm(data, {
     validators: zodClient(authSchema),
   });
-
   const { form: formData, enhance } = form;
-
   let alertTitle = '';
   let alertMessage = '';
   let showLoginRegisterButtons = false;
 
   // Handle form submission
-  async function handleSubmit(event: Event) {
-    event.preventDefault();
-
-    // send form to frontend server +page.server.ts
-    const response = await fetch('/auth', {
-      method: 'POST',
-      body: new FormData(event.target as HTMLFormElement),
-    });
-
-    // handle response & show toast
-    const result = await response.json();
+  async function handleSubmit(event: CustomEvent) {
+    const { result } = event.detail;
     console.log("result in auth-form.svelte: ");
     console.log(result);
-    if (JSON.parse(result.data)[1]) {
+    if (result.success) {
       alertTitle = 'Sign up successful!';
       alertMessage = "You've successfully signed up to our newsletter! Thank you 🥰";
       showLoginRegisterButtons = true;
@@ -55,18 +42,16 @@
   }
 </script>
 
-<form method="POST" on:submit|preventDefault={handleSubmit} use:enhance>
-
+<form method="POST" use:enhance on:submit={handleSubmit}>
   <div class="grid gap-2 mb-4">
-  <Form.Field {form} name="email">
-    <Form.Control let:attrs>
-      <Form.Label>Email</Form.Label>
-      <Input {...attrs} bind:value={$formData.email} type="email" placeholder="email@example.com" />
-    </Form.Control>
-    <Form.FieldErrors />
-  </Form.Field>
+    <Form.Field {form} name="email">
+      <Form.Control let:attrs>
+        <Form.Label>Email</Form.Label>
+        <Input {...attrs} bind:value={$formData.email} type="email" placeholder="email@example.com" />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
   </div>
-
   <div class="my-1 grid gap-5">
     <Form.Button class="w-full" variant="default">
       Sign up for the newsletter
@@ -80,5 +65,4 @@
       </a>
     </div>
   </div>
-
 </form>
