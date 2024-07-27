@@ -38,7 +38,7 @@
             </Button>
           </Menubar.Item>
           <Menubar.Item>
-            <a href="/blog">
+            <a href="/docs">
               <Button variant="outline">Learn more</Button>
             </a>
           </Menubar.Item>

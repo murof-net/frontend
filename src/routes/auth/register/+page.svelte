@@ -1,10 +1,7 @@
 <script lang="ts">
-    import { enhance } from '$app/forms';
-
-    import { Button } from "$lib/components/ui/button"
-    import { Input } from "$lib/components/ui/input"
     import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter} from "$lib/components/ui/card"
     import AlternativeAuth from "$lib/components/custom/AlternativeAuth.svelte";
+    import TermsAndPrivacy from "$lib/components/custom/TermsAndPrivacy.svelte";
     
     import type { PageData } from "./$types.js";
     import RegisterForm from "./register-form.svelte";
@@ -42,16 +39,8 @@
             </div>
         </CardContent>
         
-        <CardFooter>
-            <p class="px-8 text-center text-sm text-muted-foreground">
-                By clicking continue, you agree to our 
-                <a class="underline underline-offset-4 hover:text-primary" href="/terms">
-                    Terms of Service
-                </a> and 
-                <a class="underline underline-offset-4 hover:text-primary" href="/privacy">
-                    Privacy Policy
-                </a>.
-            </p>
+        <CardFooter class="flex justify-center">
+            <TermsAndPrivacy />
         </CardFooter>
         </Card>
     </div>

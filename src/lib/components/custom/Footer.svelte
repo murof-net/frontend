@@ -5,23 +5,53 @@
 <footer class="pb-5 pt-7 bg-background/95">
     <div class="container">
         <!-- grid with site sections -->
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-4">
             <div class="flex flex-col">
                 <h3 class="text-lg font-semibold text-accent-foreground">About</h3>
                 <ul class="mt-2">
-                    <li class="text-sm text-accent-foreground/75">Blog</li>
-                    <li class="text-sm text-accent-foreground/75">Manifesto</li>
-                    <li class="text-sm text-accent-foreground/75">Privacy Policy</li>
-                    <li class="text-sm text-accent-foreground/75">Terms of Service</li>
+                    <li class="text-sm text-accent-foreground/75">
+                        <a href="/docs">Documentation</a>
+                    </li>
+                    <li class="text-sm text-accent-foreground/75">
+                        <a href="/docs/coop">DAO Co-op</a>
+                    </li>
+                    <li class="text-sm text-accent-foreground/75">
+                        <a href="/docs/api">API docs</a>
+                    </li>
+                    <li class="text-sm text-accent-foreground/75">
+                        <a href="/docs/blog">Blog</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex flex-col">
+                <h3 class="text-lg font-semibold text-accent-foreground">Legal</h3>
+                <ul class="mt-2">
+                    <li class="text-sm text-accent-foreground/75">
+                        Contact Legal
+                    </li>
+                    <li class="text-sm text-accent-foreground/75">
+                        <a href="/docs/terms">Terms of Service</a>
+                    </li>
+                    <li class="text-sm text-accent-foreground/75">
+                        <a href="/docs/privacy">Privacy Policy</a>
+                    </li>
                 </ul>
             </div>
             <div class="flex flex-col">
                 <h3 class="text-lg font-semibold text-accent-foreground">Contact</h3>
                 <ul class="mt-2">
-                    <li class="text-sm text-accent-foreground/75">Partnerships</li>
-                    <li class="text-sm text-accent-foreground/75">Support</li>
-                    <li class="text-sm text-accent-foreground/75">Careers</li>
-                    <li class="text-sm text-accent-foreground/75">Legal</li>
+                    <li class="text-sm text-accent-foreground/75">
+                        Partnerships
+                    </li>
+                    <li class="text-sm text-accent-foreground/75">
+                        Support
+                    </li>
+                    <li class="text-sm text-accent-foreground/75">
+                        Careers
+                    </li>
+                    <li class="text-sm text-accent-foreground/75">
+                        Developers
+                    </li>
                 </ul>
             </div>
             <div class="flex flex-col">

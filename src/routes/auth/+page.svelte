@@ -1,6 +1,7 @@
 <script lang="ts">
     import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter} from "$lib/components/ui/card"
     import AlternativeAuth from "$lib/components/custom/AlternativeAuth.svelte";
+    import TermsAndPrivacy from "$lib/components/custom/TermsAndPrivacy.svelte";
 
     import type { PageData } from "./$types.js";
     import AuthForm from "./auth-form.svelte"
@@ -11,9 +12,11 @@
     <div class="flex justify-center items-center">
         <Card class="p-4 m-4">
         <CardHeader>
-            <CardTitle class="font-robomo text-3xl font-bold p-2 text-center">Authentication</CardTitle>
+            <CardTitle class="font-robomo text-3xl font-bold p-2 text-center">
+                Sign up
+            </CardTitle>
             <CardDescription class="text-balance text-muted-foreground p-1 text-center">
-                    Enter your details to access your account. Alternatively, go to <a class="underline hover:text-primary" href="/auth/register">registration</a>, <a class="underline hover:text-primary" href="/auth/login">login</a> or the <a class="underline hover:text-primary" href="/">homepage</a>
+                    Enter your email to sign up to our newsletter. Alternatively, go to <a class="underline hover:text-primary" href="/auth/register">registration</a>, <a class="underline hover:text-primary" href="/auth/login">login</a> or back to the <a class="underline hover:text-primary" href="/">homepage</a>
             </CardDescription>
         </CardHeader>
         <CardContent>
@@ -36,16 +39,8 @@
 
             </div>
         </CardContent>
-        <CardFooter>
-            <p class="px-8 text-center text-sm text-muted-foreground">
-                By clicking continue, you agree to our 
-                <a class="underline underline-offset-4 hover:text-primary" href="/terms">
-                    Terms of Service
-                </a> and 
-                <a class="underline underline-offset-4 hover:text-primary" href="/privacy">
-                    Privacy Policy
-                </a>.
-            </p>
+        <CardFooter class="flex justify-center">
+            <TermsAndPrivacy />
         </CardFooter>
         </Card>
     </div>

@@ -22,7 +22,7 @@
 </script>
 
 <form method="POST" use:enhance>
-  <div class="grid md:grid-cols-2 gap-2">
+  <div class="grid gap-2 mb-4">
     <Form.Field {form} name="email">
       <Form.Control let:attrs>
         <Form.Label>Email</Form.Label>

@@ -1,13 +1,14 @@
 <script lang="ts">
   import * as Form from "$lib/components/ui/form";
   import { Input } from "$lib/components/ui/input";
-  import { registerSchema, type RegisterSchema } from "./register-schema";
+  import { registerSchema, type RegisterSchema, languagesEnum } from "./register-schema";
   import {
     type SuperValidated,
     type Infer,
     superForm,
   } from "sveltekit-superforms";
   import { zodClient } from "sveltekit-superforms/adapters";
+  import * as Select from "$lib/components/ui/select/index.js";
 
   export let data: SuperValidated<Infer<RegisterSchema>>;
 
@@ -16,11 +17,11 @@
   });
 
   const { form: formData, enhance } = form;
+  $: selectedLanguages = $formData.languages.map(lang => ({ label: lang, value: lang }));
 </script>
    
 <form method="POST" use:enhance>
   <p class="mb-3 text-left font-semibold">General information</p>
-
   <div class="grid md:grid-cols-2 gap-2">
     <Form.Field {form} name="firstName">
       <Form.Control let:attrs>
@@ -35,7 +36,6 @@
       </Form.Control>
       <Form.FieldErrors />
     </Form.Field>
-
     <Form.Field {form} name="lastName">
       <Form.Control let:attrs>
         <!-- <Form.Label>Last name</Form.Label> -->
@@ -50,7 +50,6 @@
       <Form.FieldErrors />
     </Form.Field>
   </div>
-
   <div class="grid md:grid-cols-2 gap-2 mb-4">
       <Form.Field {form} name="email">
           <Form.Control let:attrs>
@@ -65,7 +64,6 @@
           </Form.Control>
           <Form.FieldErrors />
       </Form.Field>
-
       <Form.Field {form} name="username">
           <Form.Control let:attrs>
               <!-- <Form.Label>Username</Form.Label> -->
@@ -129,17 +127,32 @@
           <Form.FieldErrors />
       </Form.Field>
       <Form.Field {form} name="languages">
-          <Form.Control let:attrs>
-              <!-- <Form.Label>Languages</Form.Label> -->
-              <Input
-                  {...attrs}
-                  bind:value={$formData.languages}
-                  type="text"
-                  placeholder="Languages"
-                  required
-              />
-          </Form.Control>
-          <Form.FieldErrors />
+        <Form.Control let:attrs>
+          <Select.Root
+            multiple
+            selected={selectedLanguages}
+            onSelectedChange={(selected) => {
+              if (selected) {
+                $formData.languages = selected.map(item => item.value);
+              } else {
+                $formData.languages = [];
+              }
+            }}
+          >
+            <Select.Trigger {...attrs}>
+              <Select.Value placeholder="Select languages" />
+            </Select.Trigger>
+            <Select.Content>
+              {#each languagesEnum as lang}
+                <Select.Item value={lang} label={lang} />
+              {/each}
+            </Select.Content>
+            {#each $formData.languages as lang}
+              <input name={attrs.name} hidden value={lang} />
+            {/each}
+          </Select.Root>
+        </Form.Control>
+        <Form.FieldErrors />
       </Form.Field>
   </div>
   <Form.Button class="w-full my-1">

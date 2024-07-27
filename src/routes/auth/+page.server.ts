@@ -2,7 +2,6 @@ import type { PageServerLoad, Actions } from './$types';
 import { superValidate } from "sveltekit-superforms";
 import { authSchema } from "./auth-schema";
 import { zod } from "sveltekit-superforms/adapters";
-import { redirect } from '@sveltejs/kit';
 
 export const load: PageServerLoad = async () => {
     return {
@@ -23,12 +22,14 @@ export const actions: Actions = {
       });
 
       const result = await response.json();
-      if (result.user) {
-          // Redirect to login page
-          throw redirect(303, `/auth/login?email=${encodeURIComponent(email)}`);
+      console.log("result in +page.server.ts");
+      console.log(result);
+      if (result.ok) {
+          console.log('Success!');
+          return { success: true };
       } else {
-          // Redirect to register page
-          throw redirect(303, `/auth/register?email=${encodeURIComponent(email)}`);
+          console.log('Failure!');
+          return { success: false };
       }
   }
 };

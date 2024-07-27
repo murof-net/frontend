@@ -5,6 +5,7 @@
     import type { PageData } from "./$types.js";
     import LoginForm from "./login-form.svelte";
 	import { page } from "$app/stores";
+    import TermsAndPrivacy from "$lib/components/custom/TermsAndPrivacy.svelte";
 
     let initialEmail = "";
 
@@ -19,7 +20,7 @@
         <CardHeader>
             <CardTitle class="font-robomo text-3xl font-bold p-2 text-center">Login</CardTitle>
             <CardDescription class="text-balance text-muted-foreground p-1 text-center">
-                Enter your details to access your account. Alternatively, go to <a class="underline hover:text-primary" href="/auth/register">registration</a> or the <a class="underline hover:text-primary" href="/">homepage</a>
+                Enter your details to access your account. Alternatively, go to <a class="underline hover:text-primary" href="/auth/register">registration</a> or back to the <a class="underline hover:text-primary" href="/">homepage</a>
             </CardDescription>
         </CardHeader>
         <CardContent>
@@ -42,16 +43,8 @@
                 
             </div>
         </CardContent>
-        <CardFooter>
-            <p class="px-8 text-center text-sm text-muted-foreground">
-                By clicking continue, you agree to our 
-                <a class="underline underline-offset-4 hover:text-primary" href="/terms">
-                    Terms of Service
-                </a> and 
-                <a class="underline underline-offset-4 hover:text-primary" href="/privacy">
-                    Privacy Policy
-                </a>.
-            </p>
+        <CardFooter class="flex justify-center">
+            <TermsAndPrivacy />
         </CardFooter>
         </Card>
     </div>

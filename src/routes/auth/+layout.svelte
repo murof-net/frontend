@@ -5,9 +5,12 @@
     import Sun from "lucide-svelte/icons/sun";
     import Moon from "lucide-svelte/icons/moon";
     import Footer from "$lib/components/custom/Footer.svelte";
+    import { Toaster } from "$lib/components/ui/sonner";
 
     const year = new Date().getFullYear();
 </script>
+
+<Toaster />
 
 <div class="bg-accent min-h-screen flex flex-col">
     <header class="sticky top-0 z-50 w-full p-3 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -23,7 +26,7 @@
                             </Button>
                         </Menubar.Item>
                         <Menubar.Item>
-                            <a href="/blog">
+                            <a href="/docs">
                                 <Button variant="outline">Learn more</Button>
                             </a>
                         </Menubar.Item>

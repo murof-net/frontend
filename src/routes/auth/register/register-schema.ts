@@ -1,4 +1,6 @@
 import { z } from "zod";
+
+export const languagesEnum = ["English", "French", "Dutch", "Spanish", "Korean"] as const;
  
 export const registerSchema = z.object({
   firstName: z
@@ -47,10 +49,8 @@ birthDate: z
   .min(1, 'Birth date is required'),
 
 languages: z
-  .string({
-    required_error: 'Languages are required'
-  })
-  .min(1, 'Languages are required'),
+  .array(z.enum(languagesEnum))
+  .min(1, 'Please select at least one language')
 })
 .refine((data) => data.password === data.passwordConfirm, {
   path: ['passwordConfirm'],
