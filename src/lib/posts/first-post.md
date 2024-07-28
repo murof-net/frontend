@@ -1,6 +1,6 @@
 ---
 title: First post
-description: First post.
+description: Description of first post.
 date: '2023-4-14'
 categories:
   - sveltekit

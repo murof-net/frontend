@@ -3,13 +3,13 @@
     import { Button } from "$lib/components/ui/button";
 </script>
 
-<div class="container h-screen">
+<div class="container min-h-screen">
     
     <h2 class="font-robomo text-4xl font-bold m-8">
         Murof is three things
     </h2>
 
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-3 mb-6">
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 mb-6">
         <Card.Root class="flex flex-col">
             <Card.Header>
                 <Card.Title class="font-robomo mb-2 text-xl">An Interconnected Knowledgebase</Card.Title>
