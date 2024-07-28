@@ -7,7 +7,6 @@
   import * as Accordion from "$lib/components/ui/accordion/index.js";
   import { Button } from "$lib/components/ui/button";
   import * as Card from "$lib/components/ui/card";
-
 </script>
 
 <LandningNav subsections={[
