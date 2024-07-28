@@ -1,11 +1,11 @@
 <script lang="ts">
     import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter} from "$lib/components/ui/card"
-    import AlternativeAuth from "$lib/components/custom/AlternativeAuth.svelte";
+    import AlternativeAuth from "$lib/components/sections/AlternativeAuth.svelte";
 
     import type { PageData } from "./$types.js";
     import LoginForm from "./login-form.svelte";
 	import { page } from "$app/stores";
-    import TermsAndPrivacy from "$lib/components/custom/TermsAndPrivacy.svelte";
+    import TermsAndPrivacy from "$lib/components/sections/TermsAndPrivacy.svelte";
 
     let initialEmail = "";
 

@@ -1,7 +1,7 @@
 <script lang="ts">
     import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter} from "$lib/components/ui/card"
-    import AlternativeAuth from "$lib/components/custom/AlternativeAuth.svelte";
-    import TermsAndPrivacy from "$lib/components/custom/TermsAndPrivacy.svelte";
+    import AlternativeAuth from "$lib/components/sections/AlternativeAuth.svelte";
+    import TermsAndPrivacy from "$lib/components/sections/TermsAndPrivacy.svelte";
 
     import type { PageData } from "./$types.js";
     import AuthForm from "./auth-form.svelte"

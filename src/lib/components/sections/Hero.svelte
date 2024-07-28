@@ -2,8 +2,8 @@
   import { onMount } from "svelte";
   import { Button } from "$lib/components/ui/button";
   import * as HoverCard from "$lib/components/ui/hover-card/index.js";
-  import { animateTyping } from "$lib/components/custom/functions/animateTyping";
-  import "./HeroAnimation.css";
+  import { animateTyping } from "$lib/assets/animateTyping";
+  import "$lib/assets/HeroAnimation.css"
 
   const words = ["on you",  "on knowledge", "on shared interests", "on learning", "on all of us", "on the real world"];
   let typingNode: HTMLElement;

@@ -1,59 +1,20 @@
 <script lang="ts">
-  import HeroSection from "$lib/components/custom/HeroSection.svelte";
-  import Footer from "$lib/components/custom/Footer.svelte";
+  // Custom components
+  import LandningNav from "$lib/components/nav/LandingNav.svelte";
+  import HeroSection from "$lib/components/sections/Hero.svelte";
+  import Footer from "$lib/components/sections/Footer.svelte";
+  // Lib components
   import * as Accordion from "$lib/components/ui/accordion/index.js";
-
   import { Button } from "$lib/components/ui/button";
   import * as Card from "$lib/components/ui/card";
-  import * as Menubar from "$lib/components/ui/menubar";
 
-  import { toggleMode } from "mode-watcher";
-  import Sun from "lucide-svelte/icons/sun";
-  import Moon from "lucide-svelte/icons/moon";
-
-  const year = new Date().getFullYear();
 </script>
 
-<header class="sticky top-0 z-50 w-full p-3 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-  <Menubar.Root class="border-none bg-transparent">
-    <div class="container flex max-w-9xl items-center p-1">
-      <Menubar.Menu>
-
-        <Menubar.Item class="hidden text-foreground/70 transition-colors hover:text-foreground/85 md:block pr-8">
-          <a href="#features">Features</a>
-        </Menubar.Item>
-        <Menubar.Item class="hidden text-foreground/70 transition-colors hover:text-foreground/85 md:block pr-8">
-          <a href="#plans">Plans</a>
-        </Menubar.Item>
-        <Menubar.Item class="hidden text-foreground/70 transition-colors hover:text-foreground/85 md:block pr-8">
-          <a href="#faq">FAQ</a>
-        </Menubar.Item>
-
-        <div class="w-full flex justify-between md:float-right md:justify-end">
-          <Menubar.Item>
-            <Button on:click={toggleMode} variant="outline">
-              <Sun class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"/>
-              <Moon class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"/>
-              <span class="sr-only">Toggle theme</span>
-            </Button>
-          </Menubar.Item>
-          <Menubar.Item>
-            <a href="/docs">
-              <Button variant="outline">Learn more</Button>
-            </a>
-          </Menubar.Item>
-          <Menubar.Item>
-            <a href="/auth">
-              <Button variant="default">Start now</Button>
-            </a>
-          </Menubar.Item>
-        </div>
-
-      </Menubar.Menu>
-    </div>
-  </Menubar.Root>
-</header>
-
+<LandningNav subsections={[
+  {label: "Features", href: "#features"}, 
+  {label: "Plans", href: "#plans"}, 
+  {label: "FAQ", href: "#faq"}]} 
+/>
 
 <div class="bg-gradient-to-br from-background to-accent/70 mt-[-4rem]">
 

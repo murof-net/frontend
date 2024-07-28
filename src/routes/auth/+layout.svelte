@@ -4,7 +4,7 @@
     import { toggleMode } from "mode-watcher";
     import Sun from "lucide-svelte/icons/sun";
     import Moon from "lucide-svelte/icons/moon";
-    import Footer from "$lib/components/custom/Footer.svelte";
+    import Footer from "$lib/components/sections/Footer.svelte";
     import { Toaster } from "$lib/components/ui/sonner";
 
     const year = new Date().getFullYear();

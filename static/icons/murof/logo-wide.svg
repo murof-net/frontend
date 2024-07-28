@@ -27,7 +27,7 @@
 <path id="m_bow_left" d="M45.9999 142.284C46 103.284 46.0964 100.378 46 81.2836C45.9036 62.1892 84.9125 62.2885 85 81.2836C85.0875 100.279 85 103.284 85 142.284" stroke="black" stroke-width="7.99608" stroke-miterlimit="8" stroke-linecap="square"/>
 </g>
 </g>
-<path id="cursor" d="M560 14V165.107" stroke="black" stroke-width="7.99608" stroke-miterlimit="8" stroke-linecap="round"/>
+<path id="cursor" d="M542 14V165.107" stroke="black" stroke-width="7.99608" stroke-miterlimit="8" stroke-linecap="round"/>
 </g>
 </g>
 <defs>
