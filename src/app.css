@@ -12,10 +12,6 @@
   src: url('/fonts/Roboto_Mono/static/RobotoMono-Regular.ttf') format('truetype');
 }
 
-/* To alter transparency of user tailwind property
-    
-*/
-
 @layer base {
   :root {
     --background: 0 0% 100%;

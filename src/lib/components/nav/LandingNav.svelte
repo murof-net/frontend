@@ -23,11 +23,11 @@
         <div class="w-full flex justify-between md:float-right md:justify-end">
 
           <Menubar.Item>
-            <Logo />
-          </Menubar.Item>
-
-          <Menubar.Item>
             <ToggleMode />
+          </Menubar.Item>
+          
+          <Menubar.Item>
+            <Logo />
           </Menubar.Item>
 
           <Menubar.Item>
