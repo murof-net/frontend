@@ -11,16 +11,16 @@
                 <h3 class="text-lg font-semibold text-accent-foreground">About</h3>
                 <ul class="mt-2">
                     <li class="text-sm text-accent-foreground/75">
-                        <a href="/docs">Documentation</a>
+                        <a href="/docs">Docs</a>
                     </li>
                     <li class="text-sm text-accent-foreground/75">
-                        <a href="/docs/coop">DAO Co-op</a>
-                    </li>
-                    <li class="text-sm text-accent-foreground/75">
-                        <a href="/docs/api">API docs</a>
+                        <a href="/docs/api">API</a>
                     </li>
                     <li class="text-sm text-accent-foreground/75">
                         <a href="/docs/blog">Blog</a>
+                    </li>
+                    <li class="text-sm text-accent-foreground/75">
+                        <a href="/docs/coop">Coop</a>
                     </li>
                 </ul>
             </div>

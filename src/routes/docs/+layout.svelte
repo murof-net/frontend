@@ -6,13 +6,16 @@
     import Footer from "$lib/components/sections/Footer.svelte";
 </script>
 
-<LandingNav subsections={[
-    {label: "Coop", href: "/docs/coop"}, 
-    {label: "API docs", href: "/docs/api"}, 
-    {label: "Blog", href: "/docs/blog"},
-    ]} 
-/>
+<div class="bg-gradient-to-br from-background to-accent/70 min-h-screen flex flex-col">
 
-<slot />
+    <LandingNav subsections={[
+        {label: "API", href: "/docs/api"}, 
+        {label: "Blog", href: "/docs/blog"},
+        {label: "Coop", href: "/docs/coop"}, 
+        ]} 
+    />
+
+    <slot />
+</div>
 
 <Footer />

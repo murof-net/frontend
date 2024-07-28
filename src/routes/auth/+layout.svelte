@@ -7,12 +7,12 @@
 
 <Toaster />
 
-<div class="bg-accent min-h-screen flex flex-col">
+<div class="bg-gradient-to-br from-background to-accent/70 min-h-screen flex flex-col">
     
     <LandingNav subsections={[
-        {label: "Coop", href: "/docs/coop"}, 
-        {label: "API Docs", href: "/docs/api"}, 
+        {label: "API", href: "/docs/api"}, 
         {label: "Blog", href: "/docs/blog"},
+        {label: "Coop", href: "/docs/coop"}, 
         ]} 
     />
 
