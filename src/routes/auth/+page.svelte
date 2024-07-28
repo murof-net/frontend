@@ -16,7 +16,11 @@
                 Sign up
             </CardTitle>
             <CardDescription class="text-balance text-muted-foreground p-1 text-center">
-                    Enter your email to sign up to our newsletter. Alternatively, go to <a class="underline hover:text-primary" href="/auth/register">registration</a>, <a class="underline hover:text-primary" href="/auth/login">login</a> or back to the <a class="underline hover:text-primary" href="/">homepage</a>
+                    Enter your email to sign up to our newsletter. 
+                    Alternatively, go to 
+                        <a class="underline hover:text-primary" href="/auth/register">registration</a>, 
+                        <a class="underline hover:text-primary" href="/auth/login">login</a> 
+                    or back to the <a class="underline hover:text-primary" href="/">homepage</a>
             </CardDescription>
         </CardHeader>
         <CardContent>

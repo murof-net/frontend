@@ -20,7 +20,10 @@
         <CardHeader>
             <CardTitle class="font-robomo text-3xl font-bold p-2 text-center">Login</CardTitle>
             <CardDescription class="text-balance text-muted-foreground p-1 text-center">
-                Enter your details to access your account. Alternatively, go to <a class="underline hover:text-primary" href="/auth/register">registration</a> or back to the <a class="underline hover:text-primary" href="/">homepage</a>
+                Enter your details to access your account. 
+                Alternatively, go to 
+                    <a class="underline hover:text-primary" href="/auth/register">registration</a> 
+                or back to the <a class="underline hover:text-primary" href="/">homepage</a>
             </CardDescription>
         </CardHeader>
         <CardContent>

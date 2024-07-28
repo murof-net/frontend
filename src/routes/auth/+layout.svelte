@@ -1,19 +1,23 @@
 <script lang="ts">
-    import LandningNav from "$lib/components/nav/LandingNav.svelte";
+    import LandingNav from "$lib/components/nav/LandingNav.svelte";
     import Footer from "$lib/components/sections/Footer.svelte";
-
+    
     import { Toaster } from "$lib/components/ui/sonner";
-
-    const year = new Date().getFullYear();
 </script>
 
 <Toaster />
 
 <div class="bg-accent min-h-screen flex flex-col">
     
-    <LandningNav />
+    <LandingNav subsections={[
+        {label: "Coop", href: "/docs/coop"}, 
+        {label: "API Docs", href: "/docs/api"}, 
+        {label: "Blog", href: "/docs/blog"},
+        ]} 
+    />
 
     <div class="flex justify-center items-center flex-grow">
+        
         <slot />
     </div>
 

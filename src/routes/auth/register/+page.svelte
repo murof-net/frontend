@@ -14,7 +14,10 @@
         <CardHeader>
             <CardTitle class="font-robomo text-3xl font-bold p-2 text-center">Registration</CardTitle>
             <CardDescription class="text-balance text-muted-foreground p-1 text-center">
-                Enter your details to create an account. Alternatively, go to <a class="underline hover:text-primary" href="/auth/login">login</a> or the <a class="underline hover:text-primary" href="/">homepage</a>
+                Enter your details to create an account. 
+                Alternatively, go to 
+                    <a class="underline hover:text-primary" href="/auth/login">login</a> 
+                or the <a class="underline hover:text-primary" href="/">homepage</a>
             </CardDescription>
         </CardHeader>
 
