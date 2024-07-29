@@ -20,6 +20,7 @@
         taintedMessage: "Are you sure you want to leave? Changes may not be saved",
         validators: zod(signupSchema),
         });
+    console.log(JSON.parse(localStorage.getItem("superform") || "{}"));
 </script>
 
 <div class="w-full">
@@ -45,7 +46,7 @@
                 
                 <form method="POST" use:enhance>
                     <label for="email" class="font-medium">Email address</label>
-                    <Input type="email" name="email" id="email" placeholder="email@example.com"
+                    <Input type="email" name="email" id="email" placeholder="email@example.com" 
                     bind:value={$form.email} {...$constraints.email}/>
                     {#if $errors.email}
                         <small class="text-red-500">{$errors.email}</small>
@@ -57,10 +58,10 @@
                         </Button>
 
                         <div class="flex gap-4">
-                            <a class="w-[50%]" href={`/auth/login?email=${$form.email || ''}`}>
-                            <Button class="w-full" variant="outline">Go to login</Button>
+                            <a class="w-[50%]" href={"/auth/login?email=${$form.email || ''}"}>
+                                <Button class="w-full" variant="outline">Go to login</Button>
                             </a>
-                            <a class="w-[50%]" href={`/auth/register?email=${$form.email || ''}`}>
+                            <a class="w-[50%]" href={"/auth/register?email=${$form.email || ''}"}>
                             <Button class="w-full" variant="outline">Go to Register</Button>
                             </a>
                         </div>

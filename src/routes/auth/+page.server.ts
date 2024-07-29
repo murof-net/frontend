@@ -20,7 +20,7 @@ export const actions = {
         }
   
         return {
-            form
+            form: JSON.stringify(form),
         }
     },
 };
