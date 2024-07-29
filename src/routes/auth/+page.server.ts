@@ -34,16 +34,29 @@
 //   }
 // };
 
+import { fail } from '@sveltejs/kit';
+import { zod } from 'sveltekit-superforms/adapters';
+import { superValidate, message } from 'sveltekit-superforms';
+import { signupSchema } from './auth-schemas.js';
 
-
-export const load = () => {
-    return {};
-}
+export const load = (async () => {
+    const form = await superValidate(zod(signupSchema));
+  
+    // Always return { form } in load functions
+    return { form };
+  });
 
 export const actions = {
-    default: async ( event ) => {
-        const formData = Object.fromEntries(await event.request.formData())
-
-        console.log(formData)
-    }
-}
+    default: async ({ request }) => {
+      const form = await superValidate(request, zod(signupSchema));
+      console.log(form);
+  
+      if (!form.valid) {
+        return fail(400, { form });
+      }
+  
+      return message(
+        form, 
+        "Thank you for signing up!")
+    },
+  }

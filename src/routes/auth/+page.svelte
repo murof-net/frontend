@@ -1,11 +1,24 @@
-<!-- <script lang="ts">
+<script lang="ts">
+    import type { PageData } from "./$types"
+    
+    // Form validation
+    import { zod } from 'sveltekit-superforms/adapters';
+    import { signupSchema } from "./auth-schemas";
+    import { superForm } from "sveltekit-superforms/client"
+    // import SuperDebug from "sveltekit-superforms/client/SuperDebug.svelte"
+    
+    // UI components
     import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter} from "$lib/components/ui/card"
     import AlternativeAuth from "$lib/components/sections/AlternativeAuth.svelte";
     import TermsAndPrivacy from "$lib/components/sections/TermsAndPrivacy.svelte";
 
-    import type { PageData } from "./$types.js";
-    import AuthForm from "./auth-form.svelte"
+
     export let data: PageData;
+    const { form, errors, enhance, constraints } = superForm(data.form, {
+        taintedMessage: "Are you sure you want to leave? Changes may not be saved",
+        validators: zod(signupSchema),
+        });
+
 </script>
 
 <div class="w-full">
@@ -25,8 +38,22 @@
         </CardHeader>
         <CardContent>
             <div class="grid gap-4">
+            <!-- <div class="container">
+                    <SuperDebug data={$form}/>
+                </div> -->
                 
-                <AuthForm data={data.form} />
+                <form method="POST" use:enhance>
+                    <label for="email">Email address</label>
+                    <input type="email" name="email" id="email" 
+                    bind:value={$form.email} {...$constraints.email}/>
+                    {#if $errors.email}
+                        <small class="error">{$errors.email}</small>
+                    {/if}
+
+                    <br>
+
+                    <button type="submit">Sign up</button>
+                </form>
 
                 <div class="relative my-1">
                     <div class="absolute inset-0 flex items-center">
@@ -48,19 +75,4 @@
         </CardFooter>
         </Card>
     </div>
-</div> -->
-
-<script lang="ts">
-
-</script>
-
-<article>
-    <header>Sign up for newsletter</header>
-
-    <form method="post">
-        <label for="email">Email address</label>
-        <input type="email" name="email" id="email" />
-
-        <button type="submit">Sign up</button>
-    </form>
-</article>
+</div>

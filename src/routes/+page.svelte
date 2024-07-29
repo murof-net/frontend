@@ -17,7 +17,7 @@
 
 <div class="bg-gradient-to-br from-background to-accent/70 mt-[-4rem]">
 
-  <HeroSection />
+  <HeroSection/>
 
   <!-- Features section -->
   <section id="features" class="container pt-4 md:pt-16 mt-4">
