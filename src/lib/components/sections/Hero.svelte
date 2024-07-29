@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import Hover from "$lib/components/app/Hover.svelte";
   import { Button } from "$lib/components/ui/button";
-  import * as HoverCard from "$lib/components/ui/hover-card/index.js";
   import { animateTyping } from "$lib/assets/animateTyping";
   import "$lib/assets/HeroAnimation.css"
 
@@ -179,30 +179,27 @@
     <div class="p-2 bg-base-100 rounded-md text-left md:pl-4 md:pr-12">
       <div class="container p-0">
       <div class="container p-0">
-        <h1 class="font-robomo text-3xl lg:text-5xl font-bold mb-4">
+        <h1 class="font-robomo text-3xl lg:text-5xl font-bold mb-4 min-h-[3.6em] md:min-h-[3em]">
           It's education, <br>
-          but 
-            <HoverCard.Root>
-              <HoverCard.Trigger href="https://www.urbandictionary.com/define.php?term=based" target="_blank" rel="noreferrer noopener">
-                <span class="underline hover:bg-primary/25 hover:no-underline underline-offset-2 md:underline-offset-4 decoration-2 decoration-primary/40 rounded inline-block p-0.5">
-                  based
-                </span>              
-              </HoverCard.Trigger>
-              <HoverCard.Content class="w-80 md:w-96">
-                  <p class="mb-4">A word used when you agree with something; or when you want to recognize someone for being themselves, i.e. courageous and unique or not caring what others think. Especially common in online political slang.</p>
-                  <p class="my-4">The opposite of cringe, some times the opposite of biased.</p>
-                  <p class="mt-4 text-muted-foreground">- <a href="https://www.urbandictionary.com/">Urban Dictionary</a> (2024)</p>
-              </HoverCard.Content>
-            </HoverCard.Root>
-          <span class="opacity-40" bind:this={typingNode}></span>
+          but <Hover trigger="based"
+          href="https://www.urbandictionary.com/define.php?term=based" content={[
+              "A word used when you agree with something; or when you want to recognize someone for being themselves, i.e. courageous and unique or not caring what others think. Especially common in online political slang.",
+              "The opposite of cringe, some times the opposite of biased.",
+            ]} citation={{
+              title: "Urban Dictionary", 
+              date: "2024-07-29",
+              href: "https://www.urbandictionary.com/define.php?term=based",
+            }}
+          />
+          <span class="text-accent-foreground/70" bind:this={typingNode}></span>
         </h1>
       </div>
       <div class="container p-0">
-        <p class="text-lg py-1 mb-4">
+        <p class="text-lg py-1 mb-6">
           Empowering curiosity through data-driven, personalized and collaborative thinking.
           Say goodbye to knowledge-in-a-vacuum and hello to learning with purpose!
         </p>
-        <Button variant="default" class="mb-2 mr-2">
+        <Button variant="default" class="mb-3 mr-6">
           <a href="/auth">Get started today</a>
         </Button>
         <Button variant="outline">

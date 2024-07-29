@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
     import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter} from "$lib/components/ui/card"
     import AlternativeAuth from "$lib/components/sections/AlternativeAuth.svelte";
     import TermsAndPrivacy from "$lib/components/sections/TermsAndPrivacy.svelte";
@@ -48,4 +48,19 @@
         </CardFooter>
         </Card>
     </div>
-</div>
+</div> -->
+
+<script lang="ts">
+
+</script>
+
+<article>
+    <header>Sign up for newsletter</header>
+
+    <form method="post">
+        <label for="email">Email address</label>
+        <input type="email" name="email" id="email" />
+
+        <button type="submit">Sign up</button>
+    </form>
+</article>

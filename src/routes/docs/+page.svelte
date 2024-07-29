@@ -16,7 +16,7 @@
                 <Card.Description>Meet the Murof Knowledge Graph API</Card.Description>
             </Card.Header>
             <Card.Content class="flex-grow">
-                <p class="mb-3">Imagine a web of informative concepts, notes, slides and videos - where anyone can contribute and benefit. That's us - a free, open, and community-driven graph connecting ideas like never before.</p>
+                <p class="mb-3">Imagine a web of informative concepts, notes, slides and videos - where anyone can access, contribute and benefit. That's us - a free, open, and community-driven network of ideas.</p>
                 <p class="mb-1">With our API and cutting-edge LLM tech, you can seamlessly link, search, and share knowledge across any domain or language. It's like the internet, but smarter and way cooler 😎</p>
             </Card.Content>
             <Card.Footer>

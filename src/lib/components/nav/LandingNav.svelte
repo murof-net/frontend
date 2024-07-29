@@ -7,8 +7,8 @@
   export let subsections: { label: string, href: string }[] = [];
 </script>
 
-<header class="sticky top-0 z-50 w-full p-3 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-  <Menubar.Root class="border-none bg-transparent">
+<header class="sticky top-0 z-50 w-full p-1 md:p-3 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+  <Menubar.Root class="border-none bg-transparent pl-0">
     <div class="container flex max-w-9xl items-center p-1">
       <Menubar.Menu>
 
@@ -22,7 +22,7 @@
 
         <div class="w-full flex justify-between md:float-right md:justify-end">
 
-          <Menubar.Item>
+          <Menubar.Item class="pl-1">
             <ToggleMode />
           </Menubar.Item>
           
