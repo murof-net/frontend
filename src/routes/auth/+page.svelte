@@ -9,6 +9,8 @@
     
     // UI components
     import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter} from "$lib/components/ui/card"
+    import { Input } from "$lib/components/ui/input";
+    import { Button } from "$lib/components/ui/button";
     import AlternativeAuth from "$lib/components/sections/AlternativeAuth.svelte";
     import TermsAndPrivacy from "$lib/components/sections/TermsAndPrivacy.svelte";
 
@@ -18,7 +20,6 @@
         taintedMessage: "Are you sure you want to leave? Changes may not be saved",
         validators: zod(signupSchema),
         });
-
 </script>
 
 <div class="w-full">
@@ -43,16 +44,27 @@
                 </div> -->
                 
                 <form method="POST" use:enhance>
-                    <label for="email">Email address</label>
-                    <input type="email" name="email" id="email" 
+                    <label for="email" class="font-medium">Email address</label>
+                    <Input type="email" name="email" id="email" placeholder="email@example.com"
                     bind:value={$form.email} {...$constraints.email}/>
                     {#if $errors.email}
-                        <small class="error">{$errors.email}</small>
+                        <small class="text-red-500">{$errors.email}</small>
                     {/if}
 
-                    <br>
+                    <div class="my-1 pt-3 grid gap-5">
+                        <Button type="submit" class="w-full">
+                            Sign up to our newsletter
+                        </Button>
 
-                    <button type="submit">Sign up</button>
+                        <div class="flex gap-4">
+                            <a class="w-[50%]" href={`/auth/login?email=${$form.email || ''}`}>
+                            <Button class="w-full" variant="outline">Go to login</Button>
+                            </a>
+                            <a class="w-[50%]" href={`/auth/register?email=${$form.email || ''}`}>
+                            <Button class="w-full" variant="outline">Go to Register</Button>
+                            </a>
+                        </div>
+                    </div>
                 </form>
 
                 <div class="relative my-1">

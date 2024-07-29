@@ -22,7 +22,9 @@ npm run dev -- --open
 ## Roadmap
 - [x] hero page
 - [x] login page
-- [ ] login form & authentication
+- [ ] email sign-up form
+- [ ] login form & authentication (JWT)
+- [ ] use of auth0?
 - [ ] interaction with back-end
 - [ ] blog (using [mdsvex](https://mdsvex.pngwn.io/)), tags and pinned manifesto post
 - [ ] app page with [toolbar](https://lucide.dev/icons/?search=learn) and ...
