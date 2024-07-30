@@ -19,7 +19,7 @@
         </CardHeader>
         <CardContent>
             <div class="grid gap-4">
-                Please check your email to verify your account.
+                Please check your email to activate your account and get started.
             </div>
         </CardContent>
         </Card>

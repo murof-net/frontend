@@ -57,6 +57,10 @@ export const registerSchema = z.object({
         .array(z.enum(languagesEnum))
         .min(1, 'Select at least one language')
 })
+.refine((data) => data.email === data.emailConfirm, {
+    path: ['emailConfirm'],
+    message: 'Emails do not match'
+})
 .refine((data) => data.password === data.passwordConfirm, {
     path: ['passwordConfirm'],
     message: 'Passwords do not match'

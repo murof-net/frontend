@@ -58,7 +58,7 @@
                 {/each}
             </div>
             
-            <div class="absolute bottom-0 bg-gradient-to-t from-card w-full h-6"></div>
+            <div class="absolute bottom-0 bg-gradient-to-t from-card w-full h-5"></div>
         </div>
 
         <div class="text-muted-foreground text-sm">
