@@ -15,13 +15,13 @@
     // import AlternativeAuth from "$lib/components/sections/AlternativeAuth.svelte";
     import TermsAndPrivacy from "$lib/components/sections/TermsAndPrivacy.svelte";
 
-
     export let data: PageData;
     const { form, errors, enhance, constraints } = superForm(data.form, {
         taintedMessage: "Are you sure you want to leave this page? Changes may not be saved",
         validators: zod(registerSchema),
         });
-  $: selectedLanguages = $form.languages.map(lang => ({ label: lang, value: lang }));
+    
+    $: selectedLanguages = $form.languages.map(lang => ({ label: lang, value: lang }));
 </script>
 
 <div class="w-full">
@@ -113,16 +113,21 @@
                                 }
                                 }}>
                                 <Select.Trigger>
-                                <Select.Value placeholder="Select 1 or more languages" />
+                                    <Select.Value placeholder="Select 1 or more languages" />
                                 </Select.Trigger>
                                 <Select.Content>
-                                {#each languagesEnum as lang}
-                                    <Select.Item value={lang} label={lang} />
-                                {/each}
+                                    {#each languagesEnum as lang}
+                                        <Select.Item value={lang}>
+                                            {lang}
+                                        </Select.Item>
+                                    {/each}
                                 </Select.Content>
-                                {#each $form.languages as lang}
-                                <input name="languages" hidden value={lang} />
-                                {/each}
+                                    {#each $form.languages as lang}
+                                        <input name="languages" hidden value={lang} />
+                                    {/each}
+                                    {#if $errors.languages }
+                                        <small class="text-destructive">Select 1 or more languages</small>
+                                    {/if}
                             </Select.Root>
                         </div>
                     </div>

@@ -54,7 +54,7 @@ export const registerSchema = z.object({
         }),
     languages: z
         .array(z.enum(languagesEnum))
-        .min(1, 'Please select at least one language'),
+        .min(1, 'Select at least one language')
 })
 .refine((data) => data.password === data.passwordConfirm, {
     path: ['passwordConfirm'],
