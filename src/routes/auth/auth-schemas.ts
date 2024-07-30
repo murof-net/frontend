@@ -1,9 +1,8 @@
 import { z } from 'zod';
 
 // Minimum 8 characters, at least one uppercase letter, one lowercase letter, one number and one special character
-const passwordValidation = new RegExp(
-    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
-  );
+const passwordValidation = new RegExp("^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[#?!@$%^&*\\-]).{8,}$");
+
 export const languagesEnum = ["English", "Dutch", "French", "German", "Spanish", "Korean"] as const;
 
 export const loginSchema = z.object({

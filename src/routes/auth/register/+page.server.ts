@@ -14,11 +14,8 @@ export const actions = {
     default: async ({ request }) => {
         // Validate form server-side and return any validation errors
         const form = await superValidate(request, zod(registerSchema));
-        console.log("registration");
-        console.log(form);
   
         if (!form.valid) {
-            console.log("invalid");
             return fail(400, { form });
         }
   

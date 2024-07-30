@@ -5,7 +5,7 @@
     import { zod } from 'sveltekit-superforms/adapters';
     import { loginSchema } from "./auth-schemas";
     import { superForm } from "sveltekit-superforms/client"
-    // import SuperDebug from "sveltekit-superforms/client/SuperDebug.svelte"
+    import SuperDebug from "sveltekit-superforms/client/SuperDebug.svelte"
     
     // UI components
     import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter} from "$lib/components/ui/card"
@@ -37,9 +37,9 @@
         </CardHeader>
         <CardContent>
             <div class="grid gap-4">
-            <!-- <div class="container">
+            <div class="container">
                     <SuperDebug data={$form}/>
-                </div> -->
+                </div>
                 
                 <form method="POST" use:enhance>
                     <p class="text-accent-foreground p-1 font-robomo">Email address</p>
