@@ -2,6 +2,17 @@
     import { Button } from "$lib/components/ui/button"
 </script>
 
+<div class="relative my-1">
+    <div class="absolute inset-0 flex items-center">
+        <span class="w-full border-t"></span>
+    </div>
+    <div class="relative flex justify-center text-xs uppercase">
+        <span class="bg-background px-2 text-muted-foreground">
+            Or continue with
+        </span>
+    </div>
+</div>
+
 <div class="grid grid-cols-2 gap-4 my-1">
     <Button variant="outline" class="w-full">
         <svg xmlns="http://www.w3.org/2000/svg" class="p-0.5 mx-1" x="0px" y="0px" fill="currentColor" height="100%" viewBox="0 0 24 24">

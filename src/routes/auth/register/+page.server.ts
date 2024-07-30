@@ -1,18 +1,27 @@
-import type { PageServerLoad } from './$types';
-import { superValidate } from "sveltekit-superforms";
-import { registerSchema } from "./register-schema";
-import { zod } from "sveltekit-superforms/adapters";
+import { fail } from '@sveltejs/kit';
+import { zod } from 'sveltekit-superforms/adapters';
+import { superValidate } from 'sveltekit-superforms';
+import { registerSchema } from '../auth-schemas';
 
-export const load: PageServerLoad = async ({ url }) => {
-  const email = url.searchParams.get('email') || '';
-  const form = await superValidate(zod(registerSchema));
+export const load = (async () => {
+    const form = await superValidate(zod(registerSchema));
+  
+    // Always return { form } in load functions
+    return { form };
+});
 
-  // Fill out email if user passed it on from auth route
-  if (email) {
-    form.data.email = email;
-  }
-
-  return {
-    form,
-  };
+export const actions = {
+    default: async ({ request }) => {
+        const form = await superValidate(request, zod(registerSchema));
+        console.log("registration");
+        console.log(form);
+  
+        if (!form.valid) {
+            return fail(400, { form });
+        }
+  
+        return {
+            form
+        }
+    },
 };
