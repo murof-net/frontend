@@ -25,7 +25,7 @@
 </script>
 
 <div class="w-full">
-    <div class="flex justify-center items-center">
+    <div class="md:py-12 flex justify-center items-center">
         <Card class="md:p-4 md:m-4">
         <CardHeader>
             <CardTitle class="font-robomo text-3xl font-bold p-2 text-center">

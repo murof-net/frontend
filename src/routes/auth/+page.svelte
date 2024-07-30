@@ -5,7 +5,7 @@
     import { zod } from 'sveltekit-superforms/adapters';
     import { loginSchema } from "./auth-schemas";
     import { superForm } from "sveltekit-superforms/client"
-    import SuperDebug from "sveltekit-superforms/client/SuperDebug.svelte"
+    // import SuperDebug from "sveltekit-superforms/client/SuperDebug.svelte"
     
     // UI components
     import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter} from "$lib/components/ui/card"
@@ -25,7 +25,7 @@
 </script>
 
 <div class="w-full">
-    <div class="flex justify-center items-center">
+    <div class="md:py-12 flex justify-center items-center">
         <Card class="p-4 m-4">
         <CardHeader>
             <CardTitle class="font-robomo text-3xl font-bold p-2 text-center">

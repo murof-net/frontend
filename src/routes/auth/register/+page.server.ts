@@ -1,4 +1,4 @@
-import { fail } from '@sveltejs/kit';
+import { fail, redirect } from '@sveltejs/kit';
 import { zod } from 'sveltekit-superforms/adapters';
 import { superValidate } from 'sveltekit-superforms';
 import { registerSchema } from '../auth-schemas';
@@ -22,7 +22,7 @@ export const actions = {
             return fail(400, { form });
         }
   
-        // // Perform API fetch to register the user
+        // Perform API fetch to register the user
         // const response = await fetch('http://your-api-url/register', {
         //     method: 'POST',
         //     body: JSON.stringify(form.data),
@@ -31,16 +31,6 @@ export const actions = {
         //     }
         // });
 
-        // if (response.ok) {
-        //     // Redirect to a success page or perform other actions based on the response
-        //     throw redirect(303, '/success');
-        // } else {
-        //     // Handle error response
-        //     // You can display an error message or perform other actions based on the response
-        //     return fail(response.status, { form });
-        // }
-        return {
-            form
-        }
+        return redirect(303, '/auth/register/success');
     },
 };
