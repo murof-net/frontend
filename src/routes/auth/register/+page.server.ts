@@ -23,14 +23,20 @@ export const actions = {
         }
   
         // Perform API fetch to register the user
-        // const response = await fetch('http://your-api-url/register', {
-        //     method: 'POST',
-        //     body: JSON.stringify(form.data),
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     }
-        // });
+        const response = await fetch('http://127.0.0.1:8000/auth/register', {
+            method: 'POST',
+            body: JSON.stringify(form.data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
 
+        // Handle response and redirect to success page
+        if (!response.ok) {
+            return fail(500, { form });
+        }
+
+        // Redirect to success page
         return redirect(303, '/auth/register/success');
     },
 };
