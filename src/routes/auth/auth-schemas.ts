@@ -4,7 +4,7 @@ import { z } from 'zod';
 const passwordValidation = new RegExp(
     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
   );
-export const languagesEnum = ["English", "French", "Dutch", "Spanish", "Korean"] as const;
+export const languagesEnum = ["English", "Dutch", "French", "German", "Spanish", "Korean"] as const;
 
 export const loginSchema = z.object({
     email: z
@@ -34,10 +34,11 @@ export const registerSchema = z.object({
             required_error: 'Email is required'
         })
         .email('Email is invalid'),
-    username: z
+    emailConfirm: z
         .string({
-            required_error: 'Username is required'
-        }),
+            required_error: 'Confirm your email'
+        })
+        .email('Email is invalid'),
     password: z
         .string({
             required_error: 'Password is required'

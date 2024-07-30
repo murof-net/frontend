@@ -69,10 +69,10 @@
                             {/if}
                         </div>
                         <div>
-                            <Input type="text" name="username" id="username" placeholder="Username"
-                            bind:value={$form.username} {...$constraints.username}/>
-                            {#if $errors.username}
-                                <small class="text-destructive">{$errors.username}</small>
+                            <Input type="email" name="emailConfirm" id="emailConfirm" placeholder="Email confirmation"
+                            bind:value={$form.emailConfirm} {...$constraints.emailConfirm}/>
+                            {#if $errors.emailConfirm}
+                                <small class="text-destructive">{$errors.emailConfirm}</small>
                             {/if}
                         </div>
                     </div>
