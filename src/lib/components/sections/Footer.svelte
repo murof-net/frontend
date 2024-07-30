@@ -10,9 +10,9 @@
             <div class="flex flex-col">
                 <h3 class="text-lg font-semibold text-accent-foreground">About</h3>
                 <ul class="mt-2">
-                    <li class="text-sm text-accent-foreground/75">
+                    <!-- <li class="text-sm text-accent-foreground/75">
                         <a href="/docs">Docs</a>
-                    </li>
+                    </li> -->
                     <li class="text-sm text-accent-foreground/75">
                         <a href="/docs/api">API</a>
                     </li>
@@ -50,16 +50,13 @@
                     <li class="text-sm text-accent-foreground/75">
                         Careers
                     </li>
-                    <li class="text-sm text-accent-foreground/75">
-                        Developers
-                    </li>
                 </ul>
             </div>
             <div class="flex flex-col">
                 <h3 class="text-lg font-semibold text-accent-foreground">Notice</h3>
                 <p class="text-sm text-accent-foreground/75">
                     Murof is an accelerator program start-up project at <a href="https://do.ugent.be/en/nieuws/expedition-do-2024-sets-sail/">DO!</a>
-                    and is currently under active development. Follow our social media for updates.
+                    and is under active development. Follow our social media for updates.
                 </p>
             </div>
         </div>
