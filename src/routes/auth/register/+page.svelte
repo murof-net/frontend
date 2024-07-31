@@ -37,98 +37,104 @@
         </CardHeader>
         <CardContent>
             <div class="grid gap-4">
-                <div class="container">
+                <!-- <div class="container">
                     <SuperDebug data={$form}/>
-                </div>
+                </div> -->
                 
                 <form method="POST" use:enhance>
-                    <p class="text-accent-foreground p-1 font-robomo">General information</p>
-                    <div class="grid md:grid-cols-2 gap-2 py-2">
-                        <div>
-                            <Input type="text" name="firstName" id="firstName" placeholder="Frist name"
-                            bind:value={$form.firstName} {...$constraints.firstName}/>
-                            {#if $errors.firstName}
-                                <small class="text-destructive">{$errors.firstName}</small>
-                            {/if}
-                        </div>
+                    <div class="pb-2">
+                        <p class="text-accent-foreground p-1 font-robomo">General information</p>
+                        <div class="grid md:grid-cols-2 gap-2 py-2">
+                            <div>
+                                <Input type="text" name="firstName" id="firstName" placeholder="Frist name"
+                                bind:value={$form.firstName} {...$constraints.firstName}/>
+                                {#if $errors.firstName}
+                                    <small class="text-destructive">{$errors.firstName}</small>
+                                {/if}
+                            </div>
 
-                        <div>
-                            <Input type="text" name="lastName" id="lastName" placeholder="Last name"
-                            bind:value={$form.lastName} {...$constraints.lastName}/>
-                            {#if $errors.lastName}
-                                <small class="text-destructive">{$errors.lastName}</small>
-                            {/if}
+                            <div>
+                                <Input type="text" name="lastName" id="lastName" placeholder="Last name"
+                                bind:value={$form.lastName} {...$constraints.lastName}/>
+                                {#if $errors.lastName}
+                                    <small class="text-destructive">{$errors.lastName}</small>
+                                {/if}
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-2">
+                            <div>
+                                <Input type="email" name="email" id="email" placeholder="email@example.com"
+                                bind:value={$form.email} {...$constraints.email}/>
+                                {#if $errors.email}
+                                    <small class="text-destructive">{$errors.email}</small>
+                                {/if}
+                            </div>
+                            <div>
+                                <Input type="email" name="emailConfirm" id="emailConfirm" placeholder="Email confirmation"
+                                bind:value={$form.emailConfirm} {...$constraints.emailConfirm}/>
+                                {#if $errors.emailConfirm}
+                                    <small class="text-destructive">{$errors.emailConfirm}</small>
+                                {/if}
+                            </div>
                         </div>
                     </div>
-                    <div class="grid md:grid-cols-2 gap-2 mb-4">
-                        <div>
-                            <Input type="email" name="email" id="email" placeholder="email@example.com"
-                            bind:value={$form.email} {...$constraints.email}/>
-                            {#if $errors.email}
-                                <small class="text-destructive">{$errors.email}</small>
-                            {/if}
-                        </div>
-                        <div>
-                            <Input type="email" name="emailConfirm" id="emailConfirm" placeholder="Email confirmation"
-                            bind:value={$form.emailConfirm} {...$constraints.emailConfirm}/>
-                            {#if $errors.emailConfirm}
-                                <small class="text-destructive">{$errors.emailConfirm}</small>
-                            {/if}
-                        </div>
-                    </div>
-                    <p class="text-accent-foreground p-1 font-robomo">Password and confirmation</p>
-                    <div class="grid md:grid-cols-2 gap-2 py-2">
-                        <div>
-                            <Input type="password" name="password" id="password" placeholder="Pa$$w0rd"
-                            bind:value={$form.password} {...$constraints.password}/>
-                            {#if $errors.password}
-                                <small class="text-destructive">{$errors.password}</small>
-                            {/if}
-                        </div>
-                        <div>
-                            <Input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Pa$$w0rd confirmation"
-                            bind:value={$form.passwordConfirm} {...$constraints.passwordConfirm}/>
-                            {#if $errors.passwordConfirm}
-                                <small class="text-destructive w-full">{$errors.passwordConfirm}</small>
-                            {/if}
+                    <div class="py-2">
+                        <p class="text-accent-foreground p-1 font-robomo">Password and confirmation</p>
+                        <div class="grid md:grid-cols-2 gap-2 py-2">
+                            <div>
+                                <Input type="password" name="password" id="password" placeholder="Pa$$w0rd"
+                                bind:value={$form.password} {...$constraints.password}/>
+                                {#if $errors.password}
+                                    <small class="text-destructive">{$errors.password}</small>
+                                {/if}
+                            </div>
+                            <div>
+                                <Input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Pa$$w0rd confirmation"
+                                bind:value={$form.passwordConfirm} {...$constraints.passwordConfirm}/>
+                                {#if $errors.passwordConfirm}
+                                    <small class="text-destructive w-full">{$errors.passwordConfirm}</small>
+                                {/if}
+                            </div>
                         </div>
                     </div>
-                    <p class="text-accent-foreground p-1 font-robomo">Birthdate and language skills</p>
-                    <div class="grid md:grid-cols-2 gap-2 py-2">
-                        <div>
-                            <Input type="date" name="birthDate" id="birthDate" class="text-muted-foreground"
-                            bind:value={$form.birthDate} {...$constraints.birthDate}/>
-                            {#if $errors.birthDate}
-                                <small class="text-destructive">{$errors.birthDate}</small>
-                            {/if}
-                        </div>
-                        <div>
-                            <Select.Root multiple
-                                selected={selectedLanguages}
-                                onSelectedChange={(selected) => {
-                                    if (selected) {
-                                        $form.languages = selected.map(item => item.value);
-                                    } else {
-                                        $form.languages = [];
-                                }
-                                }}>
-                                <Select.Trigger>
-                                    <Select.Value placeholder="Select 1 or more languages" />
-                                </Select.Trigger>
-                                <Select.Content>
-                                    {#each languagesEnum as lang}
-                                        <Select.Item value={lang}>
-                                            {lang}
-                                        </Select.Item>
-                                    {/each}
-                                </Select.Content>
-                                    {#each $form.languages as lang}
-                                        <input name="languages" hidden value={lang} />
-                                    {/each}
-                                    {#if $errors.languages }
-                                        <small class="text-destructive">Select 1 or more languages</small>
-                                    {/if}
-                            </Select.Root>
+                    <div class="py-2">
+                        <p class="text-accent-foreground p-1 font-robomo">Birthdate and language skills</p>
+                        <div class="grid md:grid-cols-2 gap-2 py-2">
+                            <div>
+                                <Input type="date" name="birthDate" id="birthDate" class="text-muted-foreground"
+                                bind:value={$form.birthDate} {...$constraints.birthDate}/>
+                                {#if $errors.birthDate}
+                                    <small class="text-destructive">{$errors.birthDate}</small>
+                                {/if}
+                            </div>
+                            <div>
+                                <Select.Root multiple
+                                    selected={selectedLanguages}
+                                    onSelectedChange={(selected) => {
+                                        if (selected) {
+                                            $form.languages = selected.map(item => item.value);
+                                        } else {
+                                            $form.languages = [];
+                                    }
+                                    }}>
+                                    <Select.Trigger>
+                                        <Select.Value placeholder="Select 1 or more languages" />
+                                    </Select.Trigger>
+                                    <Select.Content>
+                                        {#each languagesEnum as lang}
+                                            <Select.Item value={lang}>
+                                                {lang}
+                                            </Select.Item>
+                                        {/each}
+                                    </Select.Content>
+                                        {#each $form.languages as lang}
+                                            <input name="languages" hidden value={lang} />
+                                        {/each}
+                                        {#if $errors.languages }
+                                            <small class="text-destructive">Select 1 or more languages</small>
+                                        {/if}
+                                </Select.Root>
+                            </div>
                         </div>
                     </div>
 

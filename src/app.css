@@ -12,6 +12,10 @@
   src: url('/fonts/Roboto_Mono/static/RobotoMono-Regular.ttf') format('truetype');
 }
 
+body {
+  font-family: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
