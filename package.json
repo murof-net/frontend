@@ -39,7 +39,7 @@
 	"type": "module",
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
-		"bits-ui": "^0.21.12",
+		"bits-ui": "^0.21.13",
 		"clsx": "^2.1.1",
 		"cookie": "^0.6.0",
 		"formsnap": "^1.0.1",
