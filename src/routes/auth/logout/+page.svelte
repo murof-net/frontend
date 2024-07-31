@@ -1,25 +1,29 @@
 <script lang="ts">
-    // import type { PageData } from './$types'
-    // export let data: PageData;
-
     // UI components
     import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter} from "$lib/components/ui/card"
+    import { Button } from "$lib/components/ui/button";
+    // import AlternativeAuth from "$lib/components/sections/AlternativeAuth.svelte";
+    import TermsAndPrivacy from "$lib/components/sections/TermsAndPrivacy.svelte";
 </script>
 
 <div class="w-full">
     <div class="md:py-12 flex justify-center items-center">
-        <Card class="md:p-4 md:m-4">
+        <Card class="p-4 m-4">
         <CardHeader>
             <CardTitle class="font-robomo text-3xl font-bold p-2 text-center">
-                Success
+                Logout
             </CardTitle>
             <CardDescription class="text-balance text-muted-foreground p-1 text-center">
-                Thank you for registering
+                Click the button below to logout
             </CardDescription>
         </CardHeader>
         <CardContent>
             <div class="grid gap-4">
-                Please check your email to activate your account and get started.
+                <div class="my-1 pt-3 grid gap-5">
+                    <form method="POST">
+                        <Button type="submit" class="w-full">Logout now</Button>
+                    </form>
+                </div>
             </div>
         </CardContent>
         </Card>

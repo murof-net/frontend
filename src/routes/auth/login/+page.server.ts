@@ -1,22 +1,21 @@
 import { redirect } from '@sveltejs/kit';
-import { fail } from '@sveltejs/kit';
 import { zod } from 'sveltekit-superforms/adapters';
-import { superValidate } from 'sveltekit-superforms';
-import { loginSchema } from './auth-schemas';
+import { superValidate, message } from 'sveltekit-superforms';
+import { loginSchema } from '../auth-schemas';
 
 export const load = (async () => {
     const form = await superValidate(zod(loginSchema));
-  
+    
     // Always return { form } in load functions
     return { form };
 });
 
 export const actions = {
-    default: async ({ request }) => {
+    default: async ({ cookies, request }) => {
         // Validate login form server-side and return any validation errors
         const form = await superValidate(request, zod(loginSchema));
         if (!form.valid) {
-            return fail(400, { form });
+            return message(form, "One or more form fields are invalid");
         }
 
         // Perform API fetch to login the user and get back the JWT
@@ -29,15 +28,19 @@ export const actions = {
         });
         console.log(response);
 
-        // Handle response and store the JWT
-        if (!response.ok) {
-            return fail(500, { form });
+        // Return status codes with custom messages based on API response
+        if (response.status === 401) {
+            return message(form, 'Incorrect email or password', {status: 401});
+        } else if (response.status !== 200) {
+            return message(form, 'An unexpected error occurred', {status: 500});
         }
+
+        // Set JWT in cookie
         const responseData = await response.json();
-        if (!responseData.access_token) {
-            return fail(500, { form });
-        }
-        request.headers.set('Authorization', `Bearer ${responseData.access_token}`);
+        cookies.set('jwt', responseData.access_token, {
+            path: '/',
+            httpOnly: true,
+        });
 
         // Redirect or update state after successful login
         throw redirect(302, '/app');

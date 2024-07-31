@@ -46,7 +46,7 @@
                         <p class="text-accent-foreground p-1 font-robomo">General information</p>
                         <div class="grid md:grid-cols-2 gap-2 py-2">
                             <div>
-                                <Input type="text" name="firstName" id="firstName" placeholder="Frist name"
+                                <Input type="text" name="firstName" id="firstName" placeholder="Frist name" required
                                 bind:value={$form.firstName} {...$constraints.firstName}/>
                                 {#if $errors.firstName}
                                     <small class="text-destructive">{$errors.firstName}</small>
@@ -54,7 +54,7 @@
                             </div>
 
                             <div>
-                                <Input type="text" name="lastName" id="lastName" placeholder="Last name"
+                                <Input type="text" name="lastName" id="lastName" placeholder="Last name" required
                                 bind:value={$form.lastName} {...$constraints.lastName}/>
                                 {#if $errors.lastName}
                                     <small class="text-destructive">{$errors.lastName}</small>
@@ -63,14 +63,14 @@
                         </div>
                         <div class="grid md:grid-cols-2 gap-2">
                             <div>
-                                <Input type="email" name="email" id="email" placeholder="email@example.com"
+                                <Input type="email" name="email" id="email" placeholder="email@example.com" required
                                 bind:value={$form.email} {...$constraints.email}/>
                                 {#if $errors.email}
                                     <small class="text-destructive">{$errors.email}</small>
                                 {/if}
                             </div>
                             <div>
-                                <Input type="email" name="emailConfirm" id="emailConfirm" placeholder="Email confirmation"
+                                <Input type="email" name="emailConfirm" id="emailConfirm" placeholder="Email confirmation" required
                                 bind:value={$form.emailConfirm} {...$constraints.emailConfirm}/>
                                 {#if $errors.emailConfirm}
                                     <small class="text-destructive">{$errors.emailConfirm}</small>
@@ -82,14 +82,14 @@
                         <p class="text-accent-foreground p-1 font-robomo">Password and confirmation</p>
                         <div class="grid md:grid-cols-2 gap-2 py-2">
                             <div>
-                                <Input type="password" name="password" id="password" placeholder="Pa$$w0rd"
+                                <Input type="password" name="password" id="password" placeholder="Pa$$w0rd" required
                                 bind:value={$form.password} {...$constraints.password}/>
                                 {#if $errors.password}
                                     <small class="text-destructive">{$errors.password}</small>
                                 {/if}
                             </div>
                             <div>
-                                <Input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Pa$$w0rd confirmation"
+                                <Input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Pa$$w0rd confirmation" required
                                 bind:value={$form.passwordConfirm} {...$constraints.passwordConfirm}/>
                                 {#if $errors.passwordConfirm}
                                     <small class="text-destructive w-full">{$errors.passwordConfirm}</small>
@@ -101,7 +101,7 @@
                         <p class="text-accent-foreground p-1 font-robomo">Birthdate and language skills</p>
                         <div class="grid md:grid-cols-2 gap-2 py-2">
                             <div>
-                                <Input type="date" name="birthDate" id="birthDate" class="text-muted-foreground"
+                                <Input type="date" name="birthDate" id="birthDate" class="text-muted-foreground" required
                                 bind:value={$form.birthDate} {...$constraints.birthDate}/>
                                 {#if $errors.birthDate}
                                     <small class="text-destructive">{$errors.birthDate}</small>
@@ -143,7 +143,7 @@
                             <Button type="submit" class="w-[50%]">
                                 Register for an account
                             </Button>
-                            <a class="w-[50%]" href="/auth">
+                            <a class="w-[50%]" href="/auth/login">
                             <Button class="w-full" variant="outline">Login instead</Button>
                             </a>
                         </div>
