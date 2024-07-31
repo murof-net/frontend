@@ -22,15 +22,17 @@ npm run dev -- --open
 ## Roadmap
 - [x] hero page
 - [x] login page
-- [ ] email sign-up form
-- [ ] login form & authentication (JWT)
-- [ ] use of auth0?
-- [ ] interaction with back-end
-- [ ] blog (using [mdsvex](https://mdsvex.pngwn.io/)), tags and pinned manifesto post
-- [ ] app page with [toolbar](https://lucide.dev/icons/?search=learn) and ...
+- [x] email sign-up form
+- [x] login form & authentication (JWT)
+- [x] use of auth0?
+- [x] interaction with back-end
+- [ ] authentication error/redirect handling
+- [ ] /blog (using [mdsvex](https://mdsvex.pngwn.io/) and [remark](https://github.com/remarkjs/remark-math/tree/main)), tags and pinned manifesto post
+- [ ] add 'based' hovercard to more items
+- [ ] /app page with [toolbar](https://lucide.dev/icons/?search=learn) and ...
   - [ ] dashboard page
   - [ ] profile page
   - [ ] module page
-- [ ] Deploy (with [Vercel](https://vercel.com/docs/frameworks/sveltekit))
-- [ ] add features/pricing to landing page
+- [ ] Deploy (with [Vercel](https://vercel.com/docs/frameworks/sveltekit) or Cloudflare)
+- [ ] add features / pricing to landing page
 - [ ] theme customization
