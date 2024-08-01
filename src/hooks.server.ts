@@ -7,12 +7,13 @@ const public_paths = [
     "/auth/register",
     "/auth/register/success",
     "/docs",
+    "/docs/api",
+    "/docs/blog",
+    "/docs/coop",
 ];
 
 function isPathPublic(path: string) {
-    return public_paths.some(allowedPath =>
-        path === allowedPath || path.startsWith(allowedPath + '/')
-    );
+    return public_paths.includes(path);
 }
 
 // Note that this function only checks if there is a JWT in the cookie.
@@ -20,9 +21,10 @@ function isPathPublic(path: string) {
 export const handle: Handle = async ({ event, resolve }) => {
     const { cookies, url } = event;
     const jwtToken = cookies.get('jwt');
+    console.log(jwtToken);
     
     if (!isPathPublic(url.pathname)) {
-        if (!jwtToken) {
+        if (!jwtToken || jwtToken === undefined) {
             throw redirect(302, '/auth/login');
         }
     }

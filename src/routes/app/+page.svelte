@@ -9,22 +9,23 @@
 
     import { cn } from '$lib/utils';
 
-    let defaultCollapsed = false;
+    let defaultCollapsed = true;
     let navCollapsedSize = 4;
     let isCollapsed = defaultCollapsed;
 
 	function onLayoutChange(sizes: number[]) {
-		document.cookie = `PaneForge:layout=${JSON.stringify(sizes)}`;
+		// document.cookie = `PaneForge:layout=${JSON.stringify(sizes)}`;
+        
 	}
 
 	function onCollapse() {
 		isCollapsed = true;
-		document.cookie = `PaneForge:collapsed=${true}`;
+		// document.cookie = `PaneForge:collapsed=${true}`;
 	}
 
 	function onExpand() {
 		isCollapsed = false;
-		document.cookie = `PaneForge:collapsed=${false}`;
+		// document.cookie = `PaneForge:collapsed=${false}`;
 	}
 </script>
 
@@ -35,11 +36,11 @@
     class="items-stretch">
 
 		<Resizable.Pane
-			defaultSize={265}
+			defaultSize={15}
 			collapsedSize={navCollapsedSize}
 			collapsible
 			minSize={15}
-			maxSize={20}
+			maxSize={15}
 			{onCollapse}
 			{onExpand}
 		>
