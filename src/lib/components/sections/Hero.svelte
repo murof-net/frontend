@@ -200,7 +200,7 @@
           Say goodbye to knowledge-in-a-vacuum and hello to learning with purpose!
         </p>
         <Button variant="default" class="mb-3 mr-6">
-          <a href="/auth">Get started today</a>
+          <a href="/app">Get started today</a>
         </Button>
         <Button variant="outline">
           <a href="/test">Watch our demo</a>
