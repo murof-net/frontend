@@ -22,8 +22,7 @@
 							size="icon"
 							class={cn(
 								"size-9",
-								route.variant === "default" &&
-									"dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white"
+								route.variant === "default"
 							)}
 						>
 							<svelte:component this={route.icon} class="size-4" aria-hidden="true" />
@@ -39,10 +38,10 @@
 					href="#"
 					variant={route.variant}
 					size="sm"
-					class={cn("justify-start", {
-						"dark:bg-muted dark:hover:bg-muted dark:text-white dark:hover:text-white":
-							route.variant === "default",
-					})}
+					class={cn(
+                        "justify-start",
+                        route.variant === "default",
+					)}
 				>
 					<svelte:component this={route.icon} class="mr-2 size-4" aria-hidden="true" />
 					{route.title}
