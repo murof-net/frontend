@@ -21,7 +21,7 @@ function isPathPublic(path: string) {
 export const handle: Handle = async ({ event, resolve }) => {
     const { cookies, url } = event;
     const jwtToken = cookies.get('jwt');
-    console.log(jwtToken);
+    // console.log(jwtToken);
     
     if (!isPathPublic(url.pathname)) {
         if (!jwtToken || jwtToken === undefined) {

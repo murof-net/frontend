@@ -180,8 +180,8 @@
       <div class="container p-0">
       <div class="container p-0">
         <h1 class="font-robomo text-3xl lg:text-5xl font-bold mb-4 min-h-[3.6em] md:min-h-[3em]">
-          It's education, <br>
-          but <Hover trigger="based"
+          Making education
+          <Hover trigger="based"
           href="https://www.urbandictionary.com/define.php?term=based" content={[
               "A word used when you agree with something; or when you want to recognize someone for being themselves, i.e. courageous and unique or not caring what others think. Especially common in online political slang.",
               "The opposite of cringe, some times the opposite of biased.",

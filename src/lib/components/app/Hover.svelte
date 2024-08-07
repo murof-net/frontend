@@ -25,7 +25,7 @@
     };
 </script>
 
-<HoverCard.Root>
+<HoverCard.Root openDelay={150}>
     <HoverCard.Trigger
         target="_blank"
         rel="noreferrer noopener"
@@ -58,7 +58,7 @@
                 {/each}
             </div>
             
-            <div class="absolute bottom-0 bg-gradient-to-t from-card w-full h-5"></div>
+            <div class="absolute bottom-0 bg-gradient-to-t from-card w-full h-3"></div>
         </div>
 
         <div class="text-muted-foreground text-sm">
