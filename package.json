@@ -38,6 +38,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@xyflow/svelte": "^0.1.14",
 		"bcryptjs": "^2.4.3",
 		"bits-ui": "^0.21.13",
 		"clsx": "^2.1.1",
