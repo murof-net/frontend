@@ -26,13 +26,12 @@ npm run dev -- --open
 - [x] login form & authentication (JWT)
 - [x] use of auth0?
 - [x] interaction with back-end
-- [ ] authentication error/redirect handling
+- [x] authentication error/redirect handling
 - [ ] /blog (using [mdsvex](https://mdsvex.pngwn.io/) and [remark](https://github.com/remarkjs/remark-math/tree/main)), tags and pinned manifesto post
 - [ ] add 'based' hovercard to more items
-- [ ] /app page with [toolbar](https://lucide.dev/icons/?search=learn) and ...
-  - [ ] dashboard page
-  - [ ] profile page
-  - [ ] module page
+- [ ] /app with svelteflow
+- [ ] Mu node and initial user-interation
 - [ ] Deploy (with [Vercel](https://vercel.com/docs/frameworks/sveltekit) or Cloudflare)
 - [ ] add features / pricing to landing page
 - [ ] theme customization
+- [ ] [Reveal.js](https://github.com/hakimel/reveal.js) presentations
