@@ -196,7 +196,7 @@
       </div>
       <div class="container p-0">
         <p class="text-lg py-1 mb-6">
-          We fuel curiosity through data-driven, personalized and collaborative thinking.
+          Together, we fuel our curiosity with data-driven, personalized and collaborative thinking.
           Say goodbye to knowledge-in-a-vacuum and hello to learning with purpose!
         </p>
         <Button variant="default" class="mb-3 mr-6">
