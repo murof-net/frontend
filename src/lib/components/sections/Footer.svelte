@@ -56,7 +56,7 @@
                 <h3 class="text-lg font-semibold text-accent-foreground">Notice</h3>
                 <p class="text-sm text-accent-foreground/75">
                     Murof is an accelerator program start-up project at <a href="https://do.ugent.be/en/nieuws/expedition-do-2024-sets-sail/">DO!</a>
-                    and is under active development. Follow our social media for updates.
+                    and is under active development. Get in touch with us through our social media.
                 </p>
             </div>
         </div>
