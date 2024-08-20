@@ -29,7 +29,7 @@
 
       <Card.Root class="bg-background/80">
         <Card.Header>
-          <Card.Title>Personalized Learning Paths</Card.Title>
+          <Card.Title class="font-robomo mb-2 text-xl">Personalized Learning Paths</Card.Title>
           <Card.Description>Unlock Your Unique Journey</Card.Description>
         </Card.Header>
         <Card.Content>
@@ -51,7 +51,7 @@
 
       <Card.Root class="bg-background/80">
         <Card.Header>
-          <Card.Title>Map Your Knowledge, Never Lose It Again</Card.Title>
+          <Card.Title class="font-robomo mb-2 text-xl">Map Your Knowledge, Never Lose It Again</Card.Title>
           <Card.Description>Connect the Dots of Your Understanding</Card.Description>
         </Card.Header>
         <Card.Content>
@@ -61,7 +61,7 @@
         </Card.Content>
         <Card.Footer>
           <div class="w-full text-muted-foreground hover:text-foreground/70">
-            <a href="/auth/register">Say goodbye to forgetting and hello to continuous growth</a>
+            <a href="/auth/register">Forget about forgetting and start thinking about what matters</a>
           </div>
         </Card.Footer>
       </Card.Root>
@@ -73,7 +73,7 @@
 
       <Card.Root class="bg-background/80">
         <Card.Header>
-          <Card.Title>Find Friends and Cooperators Through Shared Interests</Card.Title>
+          <Card.Title class="font-robomo mb-2 text-xl">Find Friends and Cooperators Through Shared Interests</Card.Title>
           <Card.Description>Community-Driven Connections</Card.Description>
         </Card.Header>
         <Card.Content>
@@ -97,7 +97,7 @@
     <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
       <Card.Root class="bg-background/35">
         <Card.Header>
-          <Card.Title>Basic Plan</Card.Title>
+          <Card.Title class="font-robomo mb-2 text-xl">Basic Plan</Card.Title>
           <Card.Description>Start Your Learning Journey for Free</Card.Description>
         </Card.Header>
         <Card.Content>
@@ -144,7 +144,7 @@
 
       <Card.Root class="bg-background/60">
         <Card.Header>
-          <Card.Title>Based Plan</Card.Title>
+          <Card.Title class="font-robomo mb-2 text-xl">Based Plan</Card.Title>
           <Card.Description>Elevate Your Experience with Advanced Features</Card.Description>
         </Card.Header>
         <Card.Content>
@@ -194,7 +194,7 @@
 
       <Card.Root class="bg-background">
         <Card.Header>
-          <Card.Title>Cooperator Plan</Card.Title>
+          <Card.Title class="font-robomo mb-2 text-xl">Cooperator Plan</Card.Title>
           <Card.Description>Own, Govern, and Shape the Future of Murof</Card.Description>
         </Card.Header>
         <Card.Content>
@@ -252,9 +252,9 @@
       <Accordion.Item value="item-1">
         <Accordion.Trigger>Is Murof like an e-learning?</Accordion.Trigger>
         <Accordion.Content>
-          <span class="text-robomo font-bold text-accent-foreground">
+          <div class="font-bold text-accent-foreground pb-1">
             Short Answer: No.
-          </span><br>
+          </div>
           Murof is a community-driven platform that combines a knowledge graph, social networking, and cooperative governance to create a unique educational environment. Yes, we are utilizing online infrastructure to achieve some of these goals, but the learning and teaching experience can be as online or offline as you'd like it to be.
           <div class="italic text-muted-foreground pt-4">
             An educational experience for everyone.
@@ -264,9 +264,9 @@
       <Accordion.Item value="item-2">
         <Accordion.Trigger>Is Murof fully functional?</Accordion.Trigger>
         <Accordion.Content>
-          <span class="text-robomo font-bold text-accent-foreground">
+          <div class="font-bold text-accent-foreground pb-1">
             Short Answer: Not yet.
-          </span><br>
+          </div>
           Murof is still in the early stages of development. 
           Many features are in progress, and some pages might not work as expected. 
           But that's where you come in - your feedback and involvement are crucial in shaping the platform.

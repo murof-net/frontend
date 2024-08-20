@@ -37,7 +37,7 @@
           </Menubar.Item>
 
           <Menubar.Item class="px-0 md:pl-2">
-            <a href="/app">
+            <a href="/auth/register">
               <Button variant="default">Start now</Button>
             </a>
           </Menubar.Item>

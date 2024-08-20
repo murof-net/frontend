@@ -175,6 +175,7 @@
       </svg>
     </div>
   </div>
+  
   <div class="order-2 w-full lg:w-1/2 lg:max-w-[50%]">
     <div class="p-2 bg-base-100 rounded-md text-left md:pl-4 md:pr-12">
       <div class="container p-0">
@@ -200,7 +201,7 @@
           Say goodbye to knowledge-in-a-vacuum and hello to learning with purpose!
         </p>
         <Button variant="default" class="mb-3 mr-6">
-          <a href="/app">Get started today</a>
+          <a href="/auth/register">Get started today</a>
         </Button>
         <Button variant="outline">
           <a href="/test">Watch our demo</a>
