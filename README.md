@@ -9,7 +9,8 @@ Notes on technologies used:
 - [`SvelteKit`](https://kit.svelte.dev/) web-framework with componentry and routing
 - [`Tailwindcss`](https://tailwindcss.com/) UI framework for in-HTML styling
 - [`shadcn-svelte`](https://www.shadcn-svelte.com/) UI components built with Tailwind for Svelte
-- authentication?!
+- [`auth0`](https://auth0.com/) user authentication
+- [`xyflow`](https://www.xyflow.com/) UI interface
 
 ## Quickstart
 
@@ -24,16 +25,15 @@ npm run dev -- --open
 - [x] login page
 - [x] email sign-up form
 - [x] login form & authentication (JWT)
-- [x] use of auth0?
 - [x] interaction with back-end
 - [x] authentication error/redirect handling
 - [ ] use auth0 instead
-- [ ] add content to landing page
+- [x] add content to landing page
 - [ ] /blog (using [mdsvex](https://mdsvex.pngwn.io/) and [remark](https://github.com/remarkjs/remark-math/tree/main)), tags and pinned manifesto post
 - [ ] add 'based' hovercard to more items
 - [x] /app with svelteflow
 - [ ] Mu node and initial user-interation
 - [x] Deploy (with [Vercel](https://vercel.com/docs/frameworks/sveltekit) or Cloudflare)
-- [ ] add features / pricing to landing page
+- [ ] add diagrams
 - [ ] theme customization
 - [ ] [Reveal.js](https://github.com/hakimel/reveal.js) presentations
