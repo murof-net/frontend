@@ -7,6 +7,11 @@
   import * as Accordion from "$lib/components/ui/accordion/index.js";
   import { Button } from "$lib/components/ui/button";
   import * as Card from "$lib/components/ui/card";
+  // Assets
+  import PathToMyGoal from "$lib/components/sections/landing/PathToMyGoal.svelte";
+  import iWantToKnow from "$lib/components/sections/landing/IWantToKnow.svelte";
+	import ILoveIdea from "$lib/components/sections/landing/ILoveIdea.svelte";
+	import IWantToKnow from "$lib/components/sections/landing/IWantToKnow.svelte";
 </script>
 
 <LandningNav subsections={[
@@ -15,17 +20,17 @@
   {label: "FAQ", href: "#faq"}]} 
 />
 
-<div class="bg-gradient-to-br from-background to-accent/70 mt-[-4rem]">
+<div class="bg-gradient-to-br from-background to-accent/70 mt-[-2rem] md:mt-[-4rem]">
 
   <HeroSection/>
 
   <!-- Features section -->
-  <section id="features" class="container pt-4 md:pt-16 mt-4">
+  <section id="features" class="container pt-6 md:pt-16 mt-6">
     <h2 class="font-robomo text-4xl font-bold mb-8">Features</h2>
 
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 pb-8">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 py-5 place-items-center">
 
-      <div><img src="https://placeimg.com/500/300/arch" alt="feature 1" /></div>
+      <PathToMyGoal/>
 
       <Card.Root class="bg-background/80">
         <Card.Header>
@@ -43,11 +48,12 @@
           </div>
         </Card.Footer>
       </Card.Root>
+
     </div>
 
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 pb-8">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 py-5 place-items-center">
 
-      <div><img src="https://placeimg.com/500/300/arch" alt="feature 1" /></div>
+      <IWantToKnow/>
 
       <Card.Root class="bg-background/80">
         <Card.Header>
@@ -67,9 +73,9 @@
       </Card.Root>
     </div>
 
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 pb-8">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 py-5 place-items-center">
 
-      <div><img src="https://placeimg.com/500/300/arch" alt="feature 1" /></div>
+      <ILoveIdea/>
 
       <Card.Root class="bg-background/80">
         <Card.Header>
@@ -92,7 +98,7 @@
   </section>
 
   <!-- Plans section -->
-  <section id="plans" class="container pt-4 md:pt-16">
+  <section id="plans" class="container pt-5 md:pt-16">
     <h2 class="font-robomo text-4xl font-bold mb-8">Plans</h2>
     <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
       <Card.Root class="bg-background/35">
