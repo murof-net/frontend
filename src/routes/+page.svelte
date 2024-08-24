@@ -40,7 +40,7 @@
         <Card.Content>
           Explore learning at your own pace, tailored to your passions and needs. 
           With Murof, you can create a personalized learning path that adapts as you grow. 
-          Whether you're diving deep into a specific topic or exploring new horizons, we'll help you stay on track. 🚀
+          Whether you're diving deep into a specific topic or exploring new horizons, we'll help you stay on track 🚀
         </Card.Content>
         <Card.Footer>
           <div class="w-full text-muted-foreground hover:text-foreground/70">
@@ -63,7 +63,7 @@
         <Card.Content>
           Murof lets you map out your knowledge, linking ideas, notes, and resources into an interconnected web. 
           You can easily revisit and expand your understanding whenever you need. 
-          It's like having a second brain that remembers everything for you. 🧠
+          It's like having a second brain that remembers everything for you 🧠
         </Card.Content>
         <Card.Footer>
           <div class="w-full text-muted-foreground hover:text-foreground/70">
@@ -85,7 +85,7 @@
         <Card.Content>
           Learning is better together. 
           With Murof, you can find and connect with like-minded people who share your interests 
-          (or don't) and collaborate on projects, exchange ideas, or just vibe. 🥰
+          (or don't) and collaborate on projects, exchange ideas, or just vibe 🥰
         </Card.Content>
         <Card.Footer>
           <div class="w-full text-muted-foreground hover:text-foreground/70">
