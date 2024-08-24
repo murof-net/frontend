@@ -28,7 +28,7 @@
   <section id="features" class="container pt-6 md:pt-16 mt-8">
     <h2 class="font-robomo text-4xl font-bold mb-8">Features</h2>
 
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 py-5 place-items-center">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 py-6 place-items-center">
 
       <PathToMyGoal/>
 
@@ -51,7 +51,7 @@
 
     </div>
 
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 py-5 place-items-center">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 py-6 place-items-center">
 
       <IWantToKnow/>
 
@@ -73,7 +73,7 @@
       </Card.Root>
     </div>
 
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 py-5 place-items-center">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 py-6 place-items-center">
 
       <ILoveIdea/>
 
