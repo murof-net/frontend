@@ -86,7 +86,7 @@
                                 bind:value={$form.password} {...$constraints.password} />
                                 
                                 {#if $errors.password}
-                                <div class="max-w-full md:max-w-[14rem]">
+                                <div class="max-w-full md:max-w-[14rem] leading-tight">
                                     <small class="text-destructive">
                                         {$errors.password}
                                     </small>
