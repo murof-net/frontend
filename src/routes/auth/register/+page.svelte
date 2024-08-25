@@ -46,7 +46,7 @@
                         <p class="text-accent-foreground p-1 font-robomo">General information</p>
                         <div class="grid md:grid-cols-2 gap-2 py-2">
                             <div>
-                                <Input type="text" name="firstName" id="firstName" placeholder="Frist name" required
+                                <Input type="text" name="firstName" id="firstName" placeholder="First name" required
                                 bind:value={$form.firstName} {...$constraints.firstName}/>
                                 {#if $errors.firstName}
                                     <small class="text-destructive">{$errors.firstName}</small>
@@ -82,14 +82,19 @@
                         <p class="text-accent-foreground p-1 font-robomo">Password and confirmation</p>
                         <div class="grid md:grid-cols-2 gap-2 py-2">
                             <div>
-                                <Input type="password" name="password" id="password" placeholder="Pa$$w0rd" required
-                                bind:value={$form.password} {...$constraints.password}/>
+                                <Input type="password" name="password" id="password" placeholder="Password" required
+                                bind:value={$form.password} {...$constraints.password} />
+                                
                                 {#if $errors.password}
-                                    <small class="text-destructive">{$errors.password}</small>
+                                <div class="max-w-full md:max-w-[14rem]">
+                                    <small class="text-destructive">
+                                        {$errors.password}
+                                    </small>
+                                </div>
                                 {/if}
                             </div>
                             <div>
-                                <Input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Pa$$w0rd confirmation" required
+                                <Input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Password confirmation" required
                                 bind:value={$form.passwordConfirm} {...$constraints.passwordConfirm}/>
                                 {#if $errors.passwordConfirm}
                                     <small class="text-destructive w-full">{$errors.passwordConfirm}</small>

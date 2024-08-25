@@ -3,7 +3,7 @@ import { z } from 'zod';
 // Minimum 8 characters, at least one uppercase letter, one lowercase letter, one number and one special character
 const passwordValidation = new RegExp("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[#?!@$%^&*\\-]).{8,}$");
 
-export const languagesEnum = ["English", "Dutch", "French", "German", "Spanish", "Korean"] as const;
+export const languagesEnum = ["Chinese", "Dutch", "English", "French", "German", "Indian", "Japanese", "Korean", "Spanish"] as const;
 
 export const loginSchema = z.object({
     email: z
@@ -16,7 +16,7 @@ export const loginSchema = z.object({
             required_error: 'Password is required'
         })
         .max(32, 'Password must be less than 32 characters')
-        .regex(passwordValidation, 'Password must be sufficiently strong'),
+        .regex(passwordValidation, 'Password must contain at least one uppercase letter, one lowercase letter, one number and one special character'),
 });
 
 export const registerSchema = z.object({
@@ -43,7 +43,7 @@ export const registerSchema = z.object({
             required_error: 'Password is required'
         })
         .max(32, 'Password must be less than 32 characters')
-        .regex(passwordValidation, 'Password must be sufficiently strong'),
+        .regex(passwordValidation, 'Password must contain at least one uppercase letter, one lowercase letter, one number and one special character'),
     passwordConfirm: z
         .string({
             required_error: 'Confirm your password'

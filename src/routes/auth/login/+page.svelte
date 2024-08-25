@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { PageData } from "./$types"
     import { onMount } from 'svelte';
+    import { writable } from "svelte/store";
     
     // Form validation
     import { zod } from 'sveltekit-superforms/adapters';
@@ -22,6 +23,7 @@
         });
 
     let isLoading = false; // For submit button loading state
+    let showPassword = writable(false);
 </script>
 
 <div class="w-full">
@@ -56,10 +58,15 @@
                     </div>
                     <div class="grid gap-2 py-2">
                         <p class="text-accent-foreground p-1 font-robomo">Password</p>
-                        <Input type="password" name="password" id="password" placeholder="Pa$$w0rd" 
+                        <Input type={$showPassword ? "text" : "password"} name="password" id="password" placeholder="Password" 
                         bind:value={$form.password} {...$constraints.password}/>
+                        
                         {#if $errors.password}
-                            <small class="text-destructive">{$errors.password}</small>
+                            <div class="max-w-full md:max-w-[28rem]">
+                                <small class="text-destructive">
+                                    {$errors.password}
+                                </small>
+                            </div>
                         {/if}
                     </div>
                     <div class="my-1 pt-3 grid gap-5">
