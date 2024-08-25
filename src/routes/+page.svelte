@@ -9,7 +9,6 @@
   import * as Card from "$lib/components/ui/card";
   // Assets
   import PathToMyGoal from "$lib/components/sections/landing/PathToMyGoal.svelte";
-  import iWantToKnow from "$lib/components/sections/landing/IWantToKnow.svelte";
 	import ILoveIdea from "$lib/components/sections/landing/ILoveIdea.svelte";
 	import IWantToKnow from "$lib/components/sections/landing/IWantToKnow.svelte";
 </script>
@@ -28,7 +27,7 @@
   <section id="features" class="container pt-6 md:pt-16 mt-8">
     <h2 class="font-robomo text-4xl font-bold mb-8">Features</h2>
 
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 py-6 place-items-center">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 py-8 place-items-center">
 
       <PathToMyGoal/>
 
@@ -51,7 +50,7 @@
 
     </div>
 
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 py-6 place-items-center">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 py-12 place-items-center">
 
       <IWantToKnow/>
 
@@ -73,7 +72,7 @@
       </Card.Root>
     </div>
 
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 py-6 place-items-center">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 py-8 place-items-center">
 
       <ILoveIdea/>
 
@@ -100,13 +99,13 @@
   <!-- Plans section -->
   <section id="plans" class="container pt-5 md:pt-16">
     <h2 class="font-robomo text-4xl font-bold mb-8">Plans</h2>
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-      <Card.Root class="bg-background/35">
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <Card.Root class="bg-background/60 flex flex-col">
         <Card.Header>
           <Card.Title class="font-robomo mb-2 text-xl">Basic Plan</Card.Title>
           <Card.Description>Start Your Learning Journey for Free</Card.Description>
         </Card.Header>
-        <Card.Content>
+        <Card.Content class="flex-grow">
          <div class="px-4">
           <ul class="list-disc space-y-2">
             <li>
@@ -148,12 +147,12 @@
         </Card.Footer>
       </Card.Root>
 
-      <Card.Root class="bg-background/60">
+      <Card.Root class="bg-background flex flex-col">
         <Card.Header>
           <Card.Title class="font-robomo mb-2 text-xl">Based Plan</Card.Title>
           <Card.Description>Elevate Your Experience with Advanced Features</Card.Description>
         </Card.Header>
-        <Card.Content>
+        <Card.Content class="flex-grow">
          <div class="px-4">
           <ul class="list-disc space-y-2">
             <li>
@@ -198,12 +197,12 @@
         </Card.Footer>
       </Card.Root>
 
-      <Card.Root class="bg-background">
+      <Card.Root class="bg-background border-accent-foreground/25 flex flex-col">
         <Card.Header>
           <Card.Title class="font-robomo mb-2 text-xl">Cooperator Plan</Card.Title>
           <Card.Description>Own, Govern, and Shape the Future of Murof</Card.Description>
         </Card.Header>
-        <Card.Content>
+        <Card.Content class="flex-grow">
          <div class="px-4">
           <ul class="list-disc space-y-2">
             <li>

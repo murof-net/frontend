@@ -1,8 +1,8 @@
 <script>
     // Define the URLs as variables
     let githubUrl = "https://github.com/murof-net";
-    let discordUrl = "https://discord.gg/CH98qVCd";
-    let linkedinUrl = "https://www.linkedin.com";
+    let discordUrl = "https://discord.gg/Y4gkeXCs2M";
+    let linkedinUrl = "https://be.linkedin.com/company/murof";
     let xUrl = "https://x.com";
     let youtubeUrl = "https://www.youtube.com";
     let patreonUrl = "https://www.patreon.com";
