@@ -8,7 +8,7 @@ export const handle: Handle = async ({ event, resolve }) => {
     const jwtToken = cookies.get('jwt');
     // console.log(url.pathname);
 
-    if (url.pathname.startsWith('/app')) {
+    if (url.pathname.startsWith('/appi')) {
         if (!jwtToken || jwtToken === undefined) {
             throw redirect(302, '/auth/login');
         }
