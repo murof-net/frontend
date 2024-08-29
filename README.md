@@ -28,6 +28,7 @@ npm run dev -- --open
 - [x] interaction with back-end
 - [x] authentication error/redirect handling
 - [ ] use auth0 instead
+- [ ] /demo page without backend to show end-users what it's like
 - [x] add content to landing page
 - [ ] /blog (using [mdsvex](https://mdsvex.pngwn.io/) and [remark](https://github.com/remarkjs/remark-math/tree/main)), tags and pinned manifesto post
 - [ ] add 'based' hovercard to more items
