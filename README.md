@@ -27,6 +27,7 @@ npm run dev -- --open
 - [x] login form & authentication (JWT)
 - [x] interaction with back-end
 - [x] authentication error/redirect handling
+- [ ] host with Vercel on personal account for free development
 - [ ] use auth0 instead
 - [ ] /demo page without backend to show end-users what it's like
 - [x] add content to landing page
