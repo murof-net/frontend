@@ -6,6 +6,10 @@
     // export let data: PageData;
     import Mu from './Mu.svelte';
     import { mode } from 'mode-watcher';
+    import ToggleMode from '$lib/components/ToggleMode.svelte';
+
+    import { initialNodes, initialEdges } from './nodes-and-edges';
+    import CustomNode from './CustomNode.svelte';
 
     let colorMode: ColorMode
     // Subscribe to the mode store to get its current value
@@ -15,22 +19,26 @@
         });
     }
 
+    // const nodes_extra = writable<Node[]>(initialNodes);
+    // const edges_extra = writable<Edge[]>(initialEdges);
+
     // TODO: move nodes & stuff to ts file
     const nodeTypes = {
-    'mu': Mu
+    'mu': Mu,
+    'custom': CustomNode
     };
     
     const nodes = writable<Node[]>([
         {
         id: 'mu', // required and needs to be a string
         type: 'mu',
-        position: { x: 0, y: 0 }, // required
+        position: { x: -100, y: 0 }, // required
         data: { color: writable('#ff4000') } // required
         },
         {
         id: 'hello',
-        position: { x: -100, y: 120 },
-        data: { label: 'Hello world' }
+        position: { x: -50, y: 120 },
+        data: { label: 'world' }
         },
         {
         id: 'A',
@@ -75,12 +83,31 @@
         { id: 'a2-c', source: 'A-2', target: 'C' }
     ]);
 
+    // // combine the extra nodes and edges with the initial ones
+    // $: {
+    //     const unsubscribe = nodes_extra.subscribe(value => {
+    //         nodes.update(n => [...n, ...value]);
+    //     });
+    //     const unsubscribe2 = edges_extra.subscribe(value => {
+    //         edges.update(e => [...e, ...value]);
+    //     });
+    // }
+
 </script>
 
 
-<SvelteFlow {nodeTypes} {nodes} {edges} {colorMode} fitView autoPanOnNodeDrag={true} attributionPosition="hidden">
-
-    <Background />
+<SvelteFlow 
+{nodeTypes} {nodes} {edges} 
+{colorMode} 
+class="bg-background"
+fitView autoPanOnNodeDrag={true} 
+maxZoom={2} minZoom={0.01}
+attributionPosition="hidden">
+    <!-- <Background 
+    class="bg-background"/> -->
+    <Panel position="top-left">
+        <ToggleMode />
+    </Panel>
     <Controls showLock={true} position="top-right"/>
 
 </SvelteFlow>

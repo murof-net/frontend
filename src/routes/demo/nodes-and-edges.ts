@@ -1,36 +1,36 @@
-import { type Node, type Edge, Position } from '@xyflow/svelte';
-import Mu from './Mu.svelte';
-
-export const nodeTypes = {
-    'mu': Mu
-};
-
-const nodeDefaults = {
-  sourcePosition: Position.Right,
-  targetPosition: Position.Left
-};
+import type { Node, Edge } from '@xyflow/svelte';
 
 export const initialNodes: Node[] = [
-  { id: 'A', position: { x: 0, y: 150 }, data: { label: 'A' }, ...nodeDefaults },
-  { id: 'B', position: { x: 250, y: 0 }, data: { label: 'B' }, ...nodeDefaults },
-  { id: 'C', position: { x: 250, y: 150 }, data: { label: 'C' }, ...nodeDefaults },
-  { id: 'D', position: { x: 250, y: 300 }, data: { label: 'D' }, ...nodeDefaults }
+  {
+    id: '1',
+    type: 'custom',
+    data: { name: 'Jane Doe', job: 'CEO', emoji: '😎' },
+    position: { x: 0, y: 50 }
+  },
+  {
+    id: '2',
+    type: 'custom',
+    data: { name: 'Tyler Weary', job: 'Designer', emoji: '🤓' },
+
+    position: { x: -200, y: 200 }
+  },
+  {
+    id: '3',
+    type: 'custom',
+    data: { name: 'Kristi Price', job: 'Developer', emoji: '🤩' },
+    position: { x: 200, y: 200 }
+  }
 ];
 
 export const initialEdges: Edge[] = [
   {
-    id: 'a-b',
-    source: 'A',
-    target: 'B'
+    id: 'e1-2',
+    source: '1',
+    target: '2'
   },
   {
-    id: 'a-c',
-    source: 'A',
-    target: 'C'
-  },
-  {
-    id: 'a-d',
-    source: 'A',
-    target: 'D'
+    id: 'e1-3',
+    source: '1',
+    target: '3'
   }
 ];
