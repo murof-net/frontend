@@ -3,6 +3,8 @@ import { zod } from 'sveltekit-superforms/adapters';
 import { superValidate } from 'sveltekit-superforms';
 import { registerSchema } from '../auth-schemas';
 
+import { AUTH0_DOMAIN, AUTH0_CLIENT_ID } from '$env/static/private';
+
 export const load = (async () => {
     const form = await superValidate(zod(registerSchema));
   
@@ -20,12 +22,17 @@ export const actions = {
         }
   
         // Perform API fetch to register the user
-        const response = await fetch('http://127.0.0.1:8000/auth/register', {
+        const response = await fetch(`https://${AUTH0_DOMAIN}/dbconnections/signup`, {
             method: 'POST',
-            body: JSON.stringify(form.data),
             headers: {
                 'Content-Type': 'application/json'
-            }
+            },
+            body: JSON.stringify({
+                client_id: AUTH0_CLIENT_ID,
+                email: form.data.email,
+                password: form.data.password,
+                connection: 'Username-Password-Authentication'
+            })
         });
 
         // Handle response and redirect to success page
