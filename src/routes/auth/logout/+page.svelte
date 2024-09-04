@@ -2,8 +2,6 @@
     // UI components
     import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter} from "$lib/components/ui/card"
     import { Button } from "$lib/components/ui/button";
-    // import AlternativeAuth from "$lib/components/sections/AlternativeAuth.svelte";
-    import TermsAndPrivacy from "$lib/components/sections/TermsAndPrivacy.svelte";
 </script>
 
 <div class="w-full">

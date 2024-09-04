@@ -3,26 +3,43 @@
     
     // Form validation
     import { zod } from 'sveltekit-superforms/adapters';
-    import { registerSchema, languagesEnum } from "../auth-schemas";
+    import { registerSchema } from "../auth-schemas";
     import { superForm } from "sveltekit-superforms/client"
-    import SuperDebug from "sveltekit-superforms/client/SuperDebug.svelte"
+    // import SuperDebug from "sveltekit-superforms/client/SuperDebug.svelte"
     
     // UI components
     import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter} from "$lib/components/ui/card"
     import { Input } from "$lib/components/ui/input";
     import PasswordInput from "$lib/components/ui/input/PasswordInput.svelte";
     import { Button } from "$lib/components/ui/button";
-    import * as Select from "$lib/components/ui/select/index.js";
+    // import * as Command from "$lib/components/ui/command/index.js";
+    // import * as Popover from "$lib/components/ui/popover/index.js";
+    // import ChevronsUpDown from "lucide-svelte/icons/chevrons-up-down";
+    // import Check from "lucide-svelte/icons/check";
+    // import { cn } from "$lib/utils.js";
+    // import { tick } from "svelte";
     // import AlternativeAuth from "$lib/components/sections/AlternativeAuth.svelte";
     import TermsAndPrivacy from "$lib/components/sections/TermsAndPrivacy.svelte";
 
     export let data: PageData;
-    const { form, errors, enhance, constraints } = superForm(data.form, {
+    const { form, errors, enhance, constraints, message } = superForm(data.form, {
         taintedMessage: "Are you sure you want to leave this page? Changes may not be saved",
         validators: zod(registerSchema),
         });
+
+    // let open = false;
+    // let langValue = "";
     
-    $: selectedLanguages = $form.languages.map(lang => ({ label: lang, value: lang }));
+    // $: selectedLanguage = languagesSelect.find(item => item.value === langValue)?.label ?? "Select a language";
+    // function closeAndFocusTrigger(triggerId: string) {
+    //     // We want to refocus the trigger button when the user selects
+    //     // an item from the list so users can continue navigating the
+    //     // rest of the form with the keyboard.
+    //     open = false;
+    //     tick().then(() => {
+    //     document.getElementById(triggerId)?.focus();
+    //     });
+    // }
 </script>
 
 <div class="w-full">
@@ -33,7 +50,11 @@
                 Register
             </CardTitle>
             <CardDescription class="text-balance text-muted-foreground p-1 text-center">
-                Enter your details to create an account
+                {#if $message}
+                    <span class="text-destructive">{$message}</span>
+                {:else}
+                    Enter your details to create an account
+                {/if}
             </CardDescription>
         </CardHeader>
         <CardContent>
@@ -112,7 +133,52 @@
                             {/if}
                         </div>
                         <div>
-                            <Select.Root multiple
+                            <!-- TODO: use enum with multi-select combobox instead of free text string -->
+                            <Input type="text" name="languages" id="languages" placeholder="English, Dutch, ..." required bind:value={$form.languages} {...$constraints.languages}/>
+                            {#if $errors.languages}
+                                <small class="text-destructive">{$errors.languages}</small>
+                            {/if}
+                            <!-- <Popover.Root bind:open let:ids>
+                                <Popover.Trigger asChild let:builder>
+                                  <Button
+                                    builders={[builder]}
+                                    variant="outline"
+                                    role="combobox"
+                                    aria-expanded={open}
+                                    class="w-full justify-between text-muted-foreground"
+                                  >
+                                    {selectedLanguage}
+                                    <ChevronsUpDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                                  </Button>
+                                </Popover.Trigger>
+                                <Popover.Content>
+                                  <Command.Root>
+                                    <Command.Input placeholder="Search languages..." />
+                                    <Command.Empty>Language not found.</Command.Empty>
+                                    <Command.Group>
+                                      {#each languagesSelect as lang}
+                                        <Command.Item
+                                          value={lang.value}
+                                          onSelect={(currentValue) => {
+                                            langValue = currentValue;
+                                            closeAndFocusTrigger(ids.trigger);
+                                          }}
+                                        >
+                                          <Check
+                                            class={cn(
+                                              "mr-2 h-4 w-4",
+                                              langValue !== lang.value && "text-transparent"
+                                            )}
+                                          />
+                                          {lang.label}
+                                        </Command.Item>
+                                      {/each}
+                                    </Command.Group>
+                                  </Command.Root>
+                                </Popover.Content>
+                                </Popover.Root> -->
+                                
+                            <!-- <Select.Root multiple
                                 selected={selectedLanguages}
                                 onSelectedChange={(selected) => {
                                     if (selected) {
@@ -137,7 +203,7 @@
                                     {#if $errors.languages }
                                         <small class="text-destructive">Select 1 or more languages</small>
                                     {/if}
-                            </Select.Root>
+                            </Select.Root> -->
                         </div>
                     </div>
                 </div>
