@@ -27,8 +27,9 @@ npm run dev -- --open
 - [x] login form & authentication (JWT)
 - [x] interaction with back-end
 - [x] authentication error/redirect handling
-- [ ] host with Vercel on personal account for free development
-- [ ] use auth0 instead
+- [x] host with Vercel on personal account for free development
+- [x] use auth0 instead
+- [ ] customize auth0: SSO, forgot password, email verification, ...
 - [ ] /demo page without backend to show end-users what it's like
 - [x] add content to landing page
 - [ ] /blog (using [mdsvex](https://mdsvex.pngwn.io/) and [remark](https://github.com/remarkjs/remark-math/tree/main)), tags and pinned manifesto post
