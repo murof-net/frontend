@@ -28,7 +28,7 @@ export const loginSchema = z.object({
             required_error: 'Password is required'
         })
         .max(32, 'Password must be less than 32 characters')
-        .regex(passwordValidation, 'Password must contain at least one uppercase letter, one lowercase letter, one number and one special character'),
+        .regex(passwordValidation, 'Password must be at least 8 characters long, contain uppercase and lowercase letters, a number, and a special character'),
 });
 
 export const registerSchema = z.object({
@@ -55,7 +55,7 @@ export const registerSchema = z.object({
             required_error: 'Password is required'
         })
         .max(32, 'Password must be less than 32 characters')
-        .regex(passwordValidation, 'Password must contain at least one uppercase letter, one lowercase letter, one number and one special character'),
+        .regex(passwordValidation, 'Password must be at least 8 characters long, contain uppercase and lowercase letters, a number, and a special character'),
     passwordConfirm: z
         .string({
             required_error: 'Confirm your password'
