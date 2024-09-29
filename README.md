@@ -23,21 +23,15 @@ npm run dev -- --open
 
 ## Roadmap
 - [x] hero page
-- [x] login page
-- [x] email sign-up form
-- [x] login form & authentication (JWT)
-- [x] interaction with back-end
-- [x] authentication error/redirect handling
-- [x] host with Vercel on personal account for free development
-- [x] use auth0 instead
-- [ ] customize auth0: SSO, forgot password, email verification, ...
-- [ ] /demo page without backend to show end-users what it's like
+- [x] auth pages
 - [x] add content to landing page
-- [ ] /blog (using [mdsvex](https://mdsvex.pngwn.io/) and [remark](https://github.com/remarkjs/remark-math/tree/main)), tags and pinned manifesto post
-- [ ] add 'based' hovercard to more items
+- [x] Deploy (with [Vercel](https://vercel.com))
 - [x] /app with svelteflow
+- [ ] link auth with backend (simplified version)
+- [ ] use svelte-typewriter for hero page
+- [ ] /demo page without backend to show end-users what it's like
+- [ ] /blog (using [mdsvex](https://mdsvex.pngwn.io/) and [remark](https://github.com/remarkjs/remark-math/tree/main)), tags and pinned manifesto post
 - [ ] Mu node and initial user-interation
-- [x] Deploy (with [Vercel](https://vercel.com/docs/frameworks/sveltekit) or Cloudflare)
-- [ ] add diagrams
-- [ ] theme customization
+- [ ] add 'based' hovercard to more items
 - [ ] [Reveal.js](https://github.com/hakimel/reveal.js) presentations
+- [ ] theme customization
