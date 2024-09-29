@@ -49,7 +49,7 @@
     attributionPosition="hidden">
     <Background class="bg-background"/>
     <Panel 
-    class="mb-0 mx-0"
+    class=""
     position="bottom-center">
         <Toolbelt />
     </Panel>
