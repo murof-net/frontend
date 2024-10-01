@@ -1,28 +1,13 @@
 import { z } from 'zod';
 
-// Minimum 8 characters, at least one uppercase letter, one lowercase letter, one number and one special character
 const passwordValidation = new RegExp("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[#?!@$%^&*\\-]).{8,}$");
-
-// export const languagesEnum = ["Chinese", "Dutch", "English", "French", "German", "Indian", "Japanese", "Korean", "Spanish"] as const;
-
-// export const languagesSelect = [
-//     { value: "zh", label: "Chinese" },
-//     { value: "nl", label: "Dutch" },
-//     { value: "en", label: "English" },
-//     { value: "fr", label: "French" },
-//     { value: "de", label: "German" },
-//     { value: "hi", label: "Indian" },
-//     { value: "ja", label: "Japanese" },
-//     { value: "ko", label: "Korean" },
-//     { value: "es", label: "Spanish" },
-// ]
+const usernameValidation = new RegExp("^[a-zA-Z0-9_]*$");
 
 export const loginSchema = z.object({
-    email: z
+    username: z
         .string({
-            required_error: 'Email is required'
-        })
-        .email('Email is invalid'),
+            required_error: 'Username or email is required'
+        }),
     password: z
         .string({
             required_error: 'Password is required'
@@ -32,14 +17,13 @@ export const loginSchema = z.object({
 });
 
 export const registerSchema = z.object({
-    firstName: z
+    username: z
         .string({
-            required_error: 'First name is required'
-        }),
-    lastName: z
-        .string({
-            required_error: 'Last name is required'
-        }),
+            required_error: 'Username is required'
+        })
+        .min(3, 'Username must be at least 3 characters long')
+        .max(32, 'Username must be less than 32 characters')
+        .regex(usernameValidation, 'Username can only contain letters, numbers, and underscores'),
     email: z
         .string({
             required_error: 'Email is required'
@@ -59,16 +43,7 @@ export const registerSchema = z.object({
     passwordConfirm: z
         .string({
             required_error: 'Confirm your password'
-        }),
-    birthDate: z
-        .string({
-            required_error: 'Birth date is required'
-        }),
-        // TODO: use enum instead of free text
-    languages: z
-        .string({
-            required_error: 'Add at least one language'
-        }),
+        })
 })
 .refine((data) => data.email === data.emailConfirm, {
     path: ['emailConfirm'],

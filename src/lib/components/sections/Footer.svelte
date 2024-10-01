@@ -6,13 +6,10 @@
 <footer class="pb-5 pt-7 bg-background/95">
     <div class="container">
         <!-- grid with site sections -->
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="flex flex-col">
-                <h3 class="text-lg font-semibold text-accent-foreground">About</h3>
+                <h3 class="text-lg font-semibold text-accent-foreground">Documentation</h3>
                 <ul class="mt-2">
-                    <!-- <li class="text-sm text-accent-foreground/75">
-                        <a href="/docs">Docs</a>
-                    </li> -->
                     <li class="text-sm text-accent-foreground/75">
                         <a href="/docs/api">API</a>
                     </li>
@@ -25,30 +22,16 @@
                 </ul>
             </div>
             <div class="flex flex-col">
-                <h3 class="text-lg font-semibold text-accent-foreground">Legal</h3>
+                <h3 class="text-lg font-semibold text-accent-foreground">About</h3>
                 <ul class="mt-2">
                     <li class="text-sm text-accent-foreground/75">
-                        Contact Legal
+                        <a href="mailto:contact@murof.net">Contact us</a>
                     </li>
                     <li class="text-sm text-accent-foreground/75">
-                        <a href="/docs/terms">Terms of Service</a>
+                        <a href="/docs/tos">Terms of Service</a>
                     </li>
                     <li class="text-sm text-accent-foreground/75">
                         <a href="/docs/privacy">Privacy Policy</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="flex flex-col">
-                <h3 class="text-lg font-semibold text-accent-foreground">Contact</h3>
-                <ul class="mt-2">
-                    <li class="text-sm text-accent-foreground/75">
-                        Partnerships
-                    </li>
-                    <li class="text-sm text-accent-foreground/75">
-                        Support
-                    </li>
-                    <li class="text-sm text-accent-foreground/75">
-                        Careers
                     </li>
                 </ul>
             </div>

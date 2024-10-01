@@ -4,7 +4,8 @@
 </script>
 
 <svelte:head>
-    <title>Murof</title> 
+    <title>Murof</title>
+    <meta name="title" content="Map YOUR knowledge YOUR way" />
 </svelte:head>
 
 <ModeWatcher />

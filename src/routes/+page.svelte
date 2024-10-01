@@ -97,7 +97,7 @@
   </section>
 
   <!-- Plans section -->
-  <section id="plans" class="container pt-5 md:pt-16">
+  <section id="plans" class="container pt-5 md:pt-16 hidden">
     <h2 class="font-robomo text-4xl font-bold mb-8">Plans</h2>
     <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
       <Card.Root class="bg-background/60 flex flex-col">
