@@ -14,7 +14,7 @@
 </CardHeader>
 <CardContent>
     <div class="grid gap-4">
-        <div class="my-1 pt-3 grid gap-5">
+        <div class="my-1 pt-2 grid gap-5">
             <div class="flex gap-4">
                 <a class="w-[50%]" href="/auth/register">
                     <Button class="w-full" variant="outline">Register</Button>
