@@ -11,7 +11,7 @@ export const POST = async ({ request }: { request: Request }) => {
             throw error(response.status, errorData.detail || 'Something went wrong');
         }
 
-        const data = await res.json();
+        const data = await response.json();
         return json(data);
     } catch (err: any) {
         throw error(500, err.message || 'Internal Server Error');

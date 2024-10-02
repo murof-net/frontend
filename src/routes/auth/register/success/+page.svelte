@@ -23,7 +23,7 @@
     <div class="flex flex-col items-center justify-center text-center">
         <p>Please check your email to activate your account and get started.</p>
         {#if email}
-            <span class="font-robomo my-2">Email: {email}</span>
+            <span class="font-robomo my-2">Email send to: {email}</span>
         {/if}
     </div>
 </CardContent>

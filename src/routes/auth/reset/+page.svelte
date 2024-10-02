@@ -2,7 +2,6 @@
     import { CardContent, CardDescription, CardHeader, CardTitle } from "$lib/components/ui/card";
     import { Input } from "$lib/components/ui/input";
     import { Button } from "$lib/components/ui/button";
-    import { onMount } from 'svelte';
 
     let identifier = '';
     let loading = false;
@@ -33,10 +32,10 @@
             } else {
                 const errorData = await response.json();
                 console.log(errorData);
-                error = errorData.detail || 'Something went wrong. Please try again.';
+                error = 'Password reset request failed. User not found.';
             }
         } catch (err) {
-            error = 'Network error. Please try again.';
+            error = 'Network error. Please try again later.';
         } finally {
             loading = false;
         }
@@ -67,8 +66,8 @@
 
     <div class="md:max-w-lg mx-auto">
         {#if successMessage}
-            <p class="text-green-600 mt-4 text-center">{successMessage}</p>
-            <p class="text-accent-foreground font-robomo text-center">{email}</p>
+            <p class="text-green-600 my-4 text-center">{successMessage}</p>
+            <p class="text-accent-foreground font-robomo text-center">Email send to: {email}</p>
         {/if}
 
         {#if error}
