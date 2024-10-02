@@ -77,7 +77,7 @@
             </div>
         </div>
 
-        <div class="py-2">
+        <div class="pt-2 pb-1">
             <p class="text-accent-foreground p-1 font-robomo">Password and confirmation</p>
             <div class="grid md:grid-cols-2 gap-2 py-2">
                 <div>
@@ -111,7 +111,7 @@
                     Register
                 </Button>
                 <a class="w-[50%]" href="/auth/login">
-                <Button class="w-full" variant="outline">Go to login</Button>
+                    <Button class="w-full" variant="outline">Go to login</Button>
                 </a>
             </div>
         </div>

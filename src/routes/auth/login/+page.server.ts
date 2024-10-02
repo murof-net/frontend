@@ -4,10 +4,13 @@ import { superValidate, message } from 'sveltekit-superforms';
 import { loginSchema } from '../auth-schemas';
 
 // Load function to include zod-validated form
-export const load = (async () => {
+export const load = (async ({ url }) => {
     const form = await superValidate(zod(loginSchema));
-    
-    // Always return { form } in load functions
+    const urlParams = new URLSearchParams(url.search);
+    const username = urlParams.get('username');
+    if (username) {
+        form.data.username = username;
+    }
     return { form };
 });
 
@@ -20,38 +23,45 @@ export const actions = {
             return message(form, "One or more form fields are invalid");
         }
 
-        // // Perform API fetch to login the user and get the access token
-        // const response = await fetch(`https://${AUTH0_DOMAIN}/oauth/token`, {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify({
-        //         grant_type: 'password',
-        //         client_id: AUTH0_CLIENT_ID,
-        //         client_secret: AUTH0_CLIENT_SECRET,  // Correct the secret here
-        //         username: form.data.email,
-        //         password: form.data.password,
-        //         audience: AUTH0_AUDIENCE,
-        //         scope: 'openid profile email',  // Include any necessary scopes
-        //         connection: 'Username-Password-Authentication',  // Update connection name
-        //     }),
-        // });
-        // console.log('Login response status:', response.status);
+        // Send login data to the server
+        const { username, password } = form.data;
+        try {
+            const response = await fetch('http://127.0.0.1:8000/auth/token', {
+                method: 'POST',
+                headers: {
+                    'accept': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    grant_type: 'password',
+                    username,
+                    password,
+                    scope: '',
+                    client_id: 'string',
+                    client_secret: 'string'
+                }).toString()
+            });
 
-        // // Return status codes with custom messages based on API response
-        // if (response.status === 401 || response.status === 403) {
-        //     return message(form, 'Wrong email or password.', {status: response.status});
-        // } else if (response.status !== 200) {
-        //     return message(form, 'An unexpected error occurred.', {status: 500});
-        // }
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.log('Login failed:', errorData);
+                return message(form, errorData.detail || "Login failed" );
+            }
 
-        // // Set JWT in cookie
-        // const responseData = await response.json();
-        // cookies.set('jwt', responseData.access_token, {
-        //     path: '/',
-        //     httpOnly: true,
-        // });
+            const data = await response.json();
+            cookies.set('access_token', data.access_token, {
+                path: '/',
+                httpOnly: true,
+            });
+            cookies.set('refresh_token', data.refresh_token, {
+                path: '/',
+                httpOnly: true,
+            })
+
+        } catch (error) {
+            console.error('Error during login:', error);
+            return message(form, "An unexpected error occurred");
+        }
 
         // Redirect or update state after successful login
         throw redirect(302, '/app');

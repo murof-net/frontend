@@ -6,28 +6,29 @@
     import { Button } from "$lib/components/ui/button";
 </script>
   
-<div class="bg-gradient-to-br from-background to-accent/70 min-h-screen flex flex-col">
+<div class="bg-gradient-to-br from-background to-accent/70">
     <LandingNav subsections={[
         {label: "Home", href: "/"},
     ]} />
 
-    <main class="flex-grow flex items-center justify-center py-16">
-        <Card class="m-3 md:p-4 md:m-4 bg-background/80 w-full max-w-md shadow-lg text-center">
+    <main class="py-1 md:py-12 flex justify-center items-center">
+        <Card class="p-0 md:p-4 m-4 shadow-md">
             <CardHeader>
-                <CardTitle class="font-robomo text-3xl font-bold p-2">
+                <CardTitle class="font-robomo text-3xl font-bold p-2 text-center">
                     Oops! Something went wrong 😔
                 </CardTitle>
-                <CardDescription class="text-balance text-muted-foreground p-1">
+                <CardDescription class="text-balance text-muted-foreground p-1 text-center">
                     Error Code: <span class="text-accent-foreground">{$page.status} - {$page.error?.message}</span>
                 </CardDescription>
             </CardHeader>
             <CardContent>
-                <div class="container">
-                    Murof is still in early development, so you might encounter some bugs. If you think this is a mistake, please let us know.
+                <div class="text-center md:max-w-md mx-auto">
+                    Murof is still in early development, so you might encounter some bugs.
+                    If you think this is a mistake, please let us know.
                 </div>
             </CardContent>
             <CardFooter class="flex justify-center">
-                <Button href="/" class="mt-4">Go Back to Home</Button>
+                <Button href="/" class="mt-1 mb-2 w-full md:w-1/2">Go Back to Home</Button>
             </CardFooter>
         </Card>
     </main>

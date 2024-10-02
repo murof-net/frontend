@@ -15,17 +15,15 @@
         ]} 
     />
 
-    <div class="w-full">
-        <div class="md:py-12 flex justify-center items-center">
-            <Card class="p-4 m-4">
-                <slot />
-                <!-- <AlternativeAuth /> -->
-                <CardFooter class="flex justify-center">
-                    <TermsAndPrivacy />
-                </CardFooter>
-            </Card>
-        </div>
-    </div>
+    <main class="py-1 md:py-12 flex justify-center items-center">
+        <Card class="p-0 md:p-4 m-4 shadow-md">
+            <slot />
+            <!-- <AlternativeAuth /> -->
+            <CardFooter class="flex justify-center">
+                <TermsAndPrivacy />
+            </CardFooter>
+        </Card>
+    </main>
 
 </div>
 

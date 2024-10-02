@@ -16,14 +16,14 @@
     </CardTitle>
     <CardDescription class="text-balance text-muted-foreground p-1 text-center">
         Thank you for registering
-        {#if username}<span class="font-robomo">{username}</span>{/if}!
+        {#if username}<span class="font-robomo">{username}!</span>{/if}
     </CardDescription>
 </CardHeader>
 <CardContent>
     <div class="flex flex-col items-center justify-center text-center">
         <p>Please check your email to activate your account and get started.</p>
         {#if email}
-            <span class="font-robomo my-2">{email}</span>
+            <span class="font-robomo my-2">Email: {email}</span>
         {/if}
     </div>
 </CardContent>

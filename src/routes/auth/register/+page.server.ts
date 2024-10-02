@@ -1,4 +1,4 @@
-import { redirect, fail } from '@sveltejs/kit';
+import { redirect } from '@sveltejs/kit';
 import { zod } from 'sveltekit-superforms/adapters';
 import { superValidate, message } from 'sveltekit-superforms';
 import { registerSchema } from '../auth-schemas';
@@ -16,10 +16,8 @@ export const actions = {
             return message(form, "One or more form fields are invalid");
         }
 
-        console.log('Registering user:', form.data);
+        // Send registration data to the server
         const { username, email, password } = form.data;
-
-        // Perform API fetch to register the user
         try {
             const response = await fetch('http://127.0.0.1:8000/auth/register', {
                 method: 'POST',
@@ -32,12 +30,12 @@ export const actions = {
             if (!response.ok) {
                 const errorData = await response.json();
                 console.log('Registration failed:', errorData);
-                return fail(response.status, { form, message: errorData.detail || "Registration failed" });
+                return message(form, errorData.detail || "Registration failed" );
             }
-            console.log('Registration successful');
+
         } catch (error) {
             console.error('Error during registration:', error);
-            return fail(500, { form, message: "An unexpected error occurred" });
+            return message(form, "An unexpected error occurred");
         }
 
         return redirect(303, `/auth/register/success?username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}`);

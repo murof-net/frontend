@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { PageData } from "./$types"
+    import { page } from '$app/stores';
     // import { onMount } from 'svelte';
     // import { writable } from "svelte/store";
     
@@ -52,7 +53,7 @@
         </div>
 
         <p class="text-accent-foreground p-1 font-robomo">Password</p>
-        <div class="grid gap-2 py-2">
+        <div class="grid gap-2 pt-2 pb-3">
             <PasswordInput name="password" id="password" placeholder="Password" required
             bind:value={$form.password} {...$constraints.password} />
             {#if $errors.password}
@@ -75,4 +76,9 @@
             </div>
         </div>
     </form>
+    {#if $message}
+        <div class="text-center pt-6 pb-2 text-destructive">
+            Forgot your password? <a href="/auth/reset" class="underline underline-offset-2 hover:text-primary">Reset it</a>
+        </div>
+    {/if}
 </CardContent>
