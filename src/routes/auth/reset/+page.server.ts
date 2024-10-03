@@ -13,7 +13,7 @@ export const POST = async ({ request }: { request: Request }) => {
 
         const data = await response.json();
         return json(data);
-    } catch (err: any) {
-        throw error(500, err.message || 'Internal Server Error');
+    } catch {
+        throw error(500, 'Internal Server Error');
     }
 };

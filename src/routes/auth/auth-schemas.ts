@@ -54,5 +54,23 @@ export const registerSchema = z.object({
     message: 'Passwords do not match'
 });
 
+export const newPasswordSchema = z.object({
+    password: z
+        .string({
+            required_error: 'Password is required'
+        })
+        .max(32, 'Password must be less than 32 characters')
+        .regex(passwordValidation, 'Password must be at least 8 characters long, contain uppercase and lowercase letters, a number, and a special character'),
+    passwordConfirm: z
+        .string({
+            required_error: 'Confirm your password'
+        })
+})
+.refine((data) => data.password === data.passwordConfirm, {
+    path: ['passwordConfirm'],
+    message: 'Passwords do not match'
+});
+
 export type LoginSchema = typeof loginSchema;
 export type RegisterSchema = typeof registerSchema;
+export type NewPasswordSchema = typeof newPasswordSchema

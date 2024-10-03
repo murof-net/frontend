@@ -5,14 +5,14 @@
 
     let identifier = '';
     let loading = false;
-    let error: string | null = null;
+    let errorMessage: string | null = null;
     let successMessage: string | null = null;
     let email: string | null = null;
 
     // Function to handle form submission
     const handleSubmit = async (e: Event) => {
         e.preventDefault();
-        error = null;
+        errorMessage = null;
         successMessage = null;
         loading = true;
 
@@ -27,15 +27,14 @@
 
             if (response.ok) {
                 const data = await response.json();
-                successMessage = 'Password reset request successful.';
+                successMessage = data.message || 'Password reset request successful. Please check your email.';
                 email = data.email;
             } else {
                 const errorData = await response.json();
-                console.log(errorData);
-                error = 'Password reset request failed. User not found.';
+                errorMessage = errorData.detail || 'Password reset request failed. User not found.';
             }
         } catch (err) {
-            error = 'Network error. Please try again later.';
+            errorMessage = 'Network error. Please try again later.';
         } finally {
             loading = false;
         }
@@ -65,14 +64,14 @@
     </form>
 
     <div class="md:max-w-lg mx-auto">
-        <!-- {#if successMessage} -->
+        {#if successMessage}
             <p class="text-success my-4 text-center">{successMessage}</p>
             <p class="text-accent-foreground font-robomo text-center">Email send to: {email}</p>
-        <!-- {/if} -->
+        {/if}
 
-        <!-- {#if error} -->
-            <p class="text-danger my-4 text-center">{error}</p>
+        {#if errorMessage}
+            <p class="text-danger my-4 text-center">{errorMessage}</p>
             <p class="text-accent-foreground font-robomo text-center">Could not send email</p>
-        <!-- {/if} -->
+        {/if}
     </div>
 </CardContent>
