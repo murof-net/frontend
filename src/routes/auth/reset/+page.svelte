@@ -65,13 +65,14 @@
     </form>
 
     <div class="md:max-w-lg mx-auto">
-        {#if successMessage}
-            <p class="text-green-600 my-4 text-center">{successMessage}</p>
+        <!-- {#if successMessage} -->
+            <p class="text-success my-4 text-center">{successMessage}</p>
             <p class="text-accent-foreground font-robomo text-center">Email send to: {email}</p>
-        {/if}
+        <!-- {/if} -->
 
-        {#if error}
-            <p class="text-destructive mt-4 text-center">{error}</p>
-        {/if}
+        <!-- {#if error} -->
+            <p class="text-danger my-4 text-center">{error}</p>
+            <p class="text-accent-foreground font-robomo text-center">Could not send email</p>
+        <!-- {/if} -->
     </div>
 </CardContent>

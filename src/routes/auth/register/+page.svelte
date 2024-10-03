@@ -26,7 +26,7 @@
     </CardTitle>
     <CardDescription class="text-balance text-muted-foreground p-1 text-center">
         {#if $message}
-            <span class="text-destructive">{$message}</span>
+            <span class="text-danger">{$message}</span>
         {:else}
             Enter your details to create an account
         {/if}
@@ -46,7 +46,7 @@
                 bind:value={$form.username} {...$constraints.username}/>
                 {#if $errors.username}
                     <div class="md:max-w-96">
-                        <small class="text-destructive">{$errors.username}</small>
+                        <small class="text-danger">{$errors.username}</small>
                     </div>
                 {/if}
             </div>
@@ -57,7 +57,7 @@
                     bind:value={$form.email} {...$constraints.email}/>
                     {#if $errors.email}
                         <div class="md:max-w-56">
-                            <small class="text-destructive">
+                            <small class="text-danger">
                                 {$errors.email}
                             </small>
                         </div>
@@ -68,7 +68,7 @@
                     bind:value={$form.emailConfirm} {...$constraints.emailConfirm}/>
                     {#if $errors.emailConfirm}
                         <div class="md:max-w-56">
-                            <small class="text-destructive">
+                            <small class="text-danger">
                                 {$errors.emailConfirm}
                             </small>
                         </div>
@@ -85,7 +85,7 @@
                     bind:value={$form.password} {...$constraints.password} />
                     {#if $errors.password}
                         <div class="md:max-w-56">
-                            <small class="text-destructive">
+                            <small class="text-danger">
                                 {$errors.password}
                             </small>
                         </div>
@@ -96,7 +96,7 @@
                     bind:value={$form.passwordConfirm} {...$constraints.passwordConfirm}/>
                     {#if $errors.passwordConfirm}
                         <div class="md:max-w-56">
-                            <small class="text-destructive">
+                            <small class="text-danger">
                                 {$errors.passwordConfirm}
                             </small>
                         </div>                    

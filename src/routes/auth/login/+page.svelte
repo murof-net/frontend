@@ -29,7 +29,7 @@
     </CardTitle>
     <CardDescription class="text-balance text-muted-foreground p-1 text-center">
         {#if $message}
-            <span class="text-destructive">{$message}</span>
+            <span class="text-danger">{$message}</span>
         {:else}
             Enter your identifier and password to access your account
         {/if}
@@ -47,7 +47,7 @@
             bind:value={$form.username} {...$constraints.username}/>
             {#if $errors.username}
                 <div class="md:max-w-96">
-                    <small class="text-destructive">{$errors.username}</small>
+                    <small class="text-danger">{$errors.username}</small>
                 </div>
             {/if}
         </div>
@@ -58,7 +58,7 @@
             bind:value={$form.password} {...$constraints.password} />
             {#if $errors.password}
                 <div class="md:max-w-96">
-                    <small class="text-destructive">
+                    <small class="text-danger">
                         {$errors.password}
                     </small>
                 </div>
@@ -77,7 +77,7 @@
         </div>
     </form>
     {#if $message}
-        <div class="text-center pt-6 pb-2 text-destructive">
+        <div class="text-center pt-6 pb-2 text-danger">
             Forgot your password? <a href="/auth/reset" class="underline underline-offset-2 hover:text-primary">Reset it</a>
         </div>
     {/if}
