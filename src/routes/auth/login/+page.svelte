@@ -78,7 +78,7 @@
     </form>
     {#if $message}
         <div class="text-center pt-6 pb-2 text-danger">
-            Forgot your password? <a href="/auth/reset" class="underline underline-offset-2 hover:text-primary">Reset it</a>
+            Forgot your password? <a href="/auth/reset/request" class="underline underline-offset-2 hover:text-primary">Reset it</a>
         </div>
     {/if}
 </CardContent>

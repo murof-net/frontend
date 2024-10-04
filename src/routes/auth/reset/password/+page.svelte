@@ -1,11 +1,10 @@
 <script lang="ts">
-    import type { PageData } from "./$types"
+    import type { PageData } from "../$types";
     
     // Form validation
     import { zod } from 'sveltekit-superforms/adapters';
     import { newPasswordSchema } from "../../auth-schemas";
     import { superForm } from "sveltekit-superforms/client"
-    // import SuperDebug from "sveltekit-superforms/client/SuperDebug.svelte"
     
     // UI components
     import { CardContent, CardDescription, CardHeader, CardTitle } from "$lib/components/ui/card";
@@ -19,6 +18,8 @@
         });
 
     let loading = false;
+    let successMessage = '';
+    let errorMessage = '';
 </script>
 
 <CardHeader>
@@ -68,12 +69,11 @@
 
     <div class="md:max-w-lg mx-auto">
         <!-- {#if successMessage} -->
-            <p class="text-success my-4 text-center">successMessage</p>
+            <p class="text-success my-4 text-center">{successMessage}</p>
         <!-- {/if} -->
 
         <!-- {#if errorMessage} -->
-            <p class="text-danger my-4 text-center">errorMessage</p>
-            <p class="text-accent-foreground font-robomo text-center">Could not send email</p>
+            <p class="text-danger my-4 text-center">{errorMessage}</p>
         <!-- {/if} -->
     </div>
 </CardContent>

@@ -1,6 +1,6 @@
 import { error, json } from '@sveltejs/kit';
 
-export const POST = async ({ request }: { request: Request }) => {
+export const actions = async ({ request }: { request: Request }) => {
     const { identifier } = await request.json();
 
     try {

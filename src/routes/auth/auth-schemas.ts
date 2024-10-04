@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const passwordValidation = new RegExp("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[#?!@$%^&*\\-]).{8,}$");
+const passwordValidation = new RegExp("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[.?!#$%^&*]).{8,}$");
 const usernameValidation = new RegExp("^[a-zA-Z0-9_]*$");
 
 export const loginSchema = z.object({
