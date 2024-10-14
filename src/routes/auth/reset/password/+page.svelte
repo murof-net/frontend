@@ -12,14 +12,12 @@
     import { Button } from "$lib/components/ui/button";
 
     export let data: PageData;
-    const { form, errors, enhance, constraints, message } = superForm(data.form, {
+    const { form, errors, enhance, constraints, message, status } = superForm(data.form, {
         taintedMessage: "Are you sure you want to leave this page? Changes may not be saved",
         validators: zod(newPasswordSchema),
         });
 
     let loading = false;
-    let successMessage = '';
-    let errorMessage = '';
 </script>
 
 <CardHeader>
@@ -27,7 +25,11 @@
         New Password
     </CardTitle>
     <CardDescription class="text-balance text-muted-foreground p-1 text-center">
-        Enter your new password
+        {#if $message}
+            <span class={$status === 'success' ? 'text-success' : 'text-danger'}>{$message}</span>
+        {:else}
+            Enter your new password
+        {/if}
     </CardDescription>
 </CardHeader>
 <CardContent>
@@ -66,14 +68,4 @@
             </Button>
         </div>
     </form>
-
-    <div class="md:max-w-lg mx-auto">
-        <!-- {#if successMessage} -->
-            <p class="text-success my-4 text-center">{successMessage}</p>
-        <!-- {/if} -->
-
-        <!-- {#if errorMessage} -->
-            <p class="text-danger my-4 text-center">{errorMessage}</p>
-        <!-- {/if} -->
-    </div>
 </CardContent>
